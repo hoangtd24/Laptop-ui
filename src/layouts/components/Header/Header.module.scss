@@ -49,9 +49,16 @@
     margin-right: 1px;
     color: white;
     font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover{
         cursor: pointer;
         opacity: 0.8;
     }
+}
+
+.search-result{
+    width: 375px;
 }
