@@ -1,13 +1,57 @@
 .wrapper{
+    --search-button-width: 38px;
+    --search-button-height: 38px;
+
     width: 100%;
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
     background-color: white;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0.5rem 1rem 0px;
 }
 
 .inner{
     width: 1216px;
     height: 88px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-full{
+    width: 250px;
+}
+
+.search{
+    width: 375px;
+    height: 40px;
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgb(234, 234, 234);
+    margin-left: 16px;
+}
+
+.search-input{
+    flex: 1;
+    background-color: rgb(245, 245, 245);
+    height: 100%;
+    padding: 0 12px;
+}       
+
+.search-btn{
+    width: 36px;
+    height:36px;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    margin-right: 1px;
+    color: white;
+    font-size: 1.8rem;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
 }
