@@ -62,3 +62,70 @@
 .search-result{
     width: 375px;
 }
+
+
+.actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 6px 0 16px;
+    flex: 1;
+}
+
+.notification-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 384px;
+    padding: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px 0px;
+}
+
+.notification-title{
+    font-size: 1.2rem;
+    margin-top: 24px;
+    color: rgb(132, 135, 136);
+}
+
+.cart-result{
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    width: 384px;
+    max-height: 400px;
+    box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px 0px;
+    overflow: hidden;
+    padding: 16px;
+
+    img{
+        width: 186px;
+        height: 186px;
+        margin-top: 32px;
+    }
+}
+
+.cart-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cart-title{
+    color: rgb(136, 136, 136);
+    font-size: 1.4rem;
+    margin-top: 16px;
+    margin-bottom: 24px;
+}
+
+.buy-btn{
+    margin-bottom: 32px;
+    font-size: 1.4rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 4px;
+    padding: 7px 13px;
+}

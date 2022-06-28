@@ -3,6 +3,9 @@
 
 :root{
     --primary-color: #029066;
+    --white:white;
+    --black: black;
+    --text-color: #ccc;
 }
 
 *{
@@ -24,6 +27,8 @@ body{
 button, input{
     border: none;
     outline: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 a{
