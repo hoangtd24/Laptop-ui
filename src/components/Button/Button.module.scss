@@ -1,0 +1,25 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.primary{
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    
+}
+
+.small{
+    height: 32px;
+    width: 121px;
+    border-radius: 7px;
+    font-size: 1.4rem;
+}
+
+.large{
+    height: 46px;
+    min-width: 250px;
+    border-radius: 7px;
+    font-size: 1.4rem;
+}
