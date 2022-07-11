@@ -1,10 +1,11 @@
 import classNames from 'classnames/bind';
+import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ActionItem.module.scss';
 
 const cx = classNames.bind(styles);
 
-function ActionItem({ to, href, icon, title, onClick, className, ...passProps }) {
+const ActionItem = forwardRef(({ to, href, icon, title, onClick, className, ...passProps },ref) =>{
     let Comp = 'button';
     const props = {
         onClick,
@@ -24,11 +25,11 @@ function ActionItem({ to, href, icon, title, onClick, className, ...passProps })
     });
 
     return (
-        <Comp className={classes} {...props}>
+        <Comp ref = {ref} className={classes} {...props}>
             <div className={cx('action-icon')}>{icon}</div>
             <span className={cx('action-title')}>{title}</span>
         </Comp>
     );
-}
+})
 
 export default ActionItem;

@@ -1,0 +1,36 @@
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 250px;
+    padding: 4px 0 10px 0;
+}
+
+.custom-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 40px;
+    font-size: 1.4rem;
+    min-width: unset;
+    border-radius: unset;
+    padding: 10px;
+    width: 100%;
+
+    &:hover{
+        background-color: rgb(245, 245, 245);
+    }
+}
+
+.name{
+    min-width: unset;
+    cursor: default;
+}
+
+.login-btn{
+    width: 92%;
+}

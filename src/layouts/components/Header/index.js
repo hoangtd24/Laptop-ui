@@ -8,16 +8,45 @@ import images from '~/assets/images/index.js';
 import { Wrapper as PoperWrapper } from '~/poper';
 import SearchItem from '~/components/SearchItem';
 import ActionItem from '~/components/ActionItem';
-import { Bell, Cart, Order, Promote, User } from '~/components/icons';
+import { Address, Bell, Cart, News, Order, Promote, User } from '~/components/icons';
 import { Fragment, useState } from 'react';
 import CartItem from '~/components/CartItem/CartItem';
 import Button from '~/components/Button/Button';
+import Menu from '~/poper/Menu/Menu';
 
 const cx = classNames.bind(style);
 
 function Header() {
     const [cartItem, setCartItem] = useState([0]);
+    const isSignIn = true
 
+    const userMenu = [
+        {
+            path: '/profile',
+            title: 'Thông tin tài khoản',
+            icon: <User width='18px' height = '18px' />
+        },
+        {
+            path: '/order',
+            title: 'Quản lí đơn hàng',
+            icon: <Order width='18px' height = '18px' />
+        },
+        {
+            path: '/address',
+            title: 'Sổ địa chỉ',
+            icon: <Address width='18px' height = '18px' />
+        },
+        {
+            path: '/notifications',
+            title: 'Thông báo',
+            icon: <Bell width='18px' height = '18px' />
+        },
+        {
+            path: '/notifications',
+            title: 'Bản tin',
+            icon: <News width='18px' height = '18px' />
+        }
+    ]
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -53,7 +82,13 @@ function Header() {
                 <div className={cx('actions')}>
                     <ActionItem icon={<Promote />} title="Khuyến mãi" to="/khuyenmai" />
                     <ActionItem icon={<Order />} title="Đơn hàng" to="/order" />
-                    <ActionItem icon={<User />} title="Đăng nhập" />
+                    {isSignIn ? (
+                        <Menu items = {userMenu}>
+                            <ActionItem icon={<User />} title="Tống Hoàng" />
+                        </Menu>
+                    ):(
+                        <ActionItem icon={<User />} title="Đăng nhập"/>
+                    )}
 
                     <div>
                         <Tippy

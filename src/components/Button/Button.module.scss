@@ -21,5 +21,18 @@
     height: 46px;
     min-width: 250px;
     border-radius: 7px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+    color: #212529;
 }
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
