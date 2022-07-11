@@ -9,6 +9,7 @@
     top: 0;
     background-color: white;
     box-shadow: rgb(0 0 0 / 10%) 0px 0.5rem 1rem 0px;
+    z-index: 100;
 }
 
 .inner{
@@ -39,6 +40,7 @@
     background-color: rgb(245, 245, 245);
     height: 100%;
     padding: 0 12px;
+    font-size: 1.4rem;
 }       
 
 .search-btn{
