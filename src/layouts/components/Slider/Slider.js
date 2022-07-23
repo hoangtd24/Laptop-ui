@@ -10,8 +10,8 @@ function Slider({ images }) {
     return (
         <Carousel interval={5000} indicators = {false}>
             {images.map((image, index) => (
-                <Carousel.Item>
-                    <img src={image.src} key={index} className = {cx('slide-image')} />
+                <Carousel.Item key={index}>
+                    <img src={image.src} className = {cx('slide-image')} />
                 </Carousel.Item>
             ))}
         </Carousel>

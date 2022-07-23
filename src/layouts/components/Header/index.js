@@ -9,17 +9,30 @@ import { Wrapper as PoperWrapper } from '~/poper';
 import SearchItem from '~/components/SearchItem';
 import ActionItem from '~/components/ActionItem';
 import { Address, Bell, Cart, News, Order, Promote, User } from '~/components/icons';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import CartItem from '~/components/CartItem/CartItem';
 import Button from '~/components/Button/Button';
 import Menu from '~/poper/Menu/Menu';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(style);
 
 function Header() {
     const [cartItem, setCartItem] = useState([0]);
+    const [searchValue, setSearchValue] = useState('');
+    const [searchResult, setSearchResult] = useState([]);
+    const [showResult, setShowResult] = useState(true);
+
     const isSignIn = true
 
+    useEffect(() => {
+        if(!searchValue.trim()){
+            return
+        }
+        fetch(`https://api-laptop-shop.herokuapp.com/api/products?search=${searchValue}`)
+        .then(res=> res.json())
+        .then(res => setSearchResult(res.listProducts))
+    },[searchValue])
     const userMenu = [
         {
             path: '/profile',
@@ -50,28 +63,31 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img src={images.logofull} alt="Logo" className={cx('logo-full')} />
+                <Link to = '/'>
+                    <img src={images.logofull} alt="Logo" className={cx('logo-full')}/>
+                </Link>
                 <div>
                     <Tippy
-                        visible={false}
+                        visible={showResult && searchResult.length > 0}
                         interactive
+                        onClickOutside={()=>setShowResult(false)}
                         placement="bottom-start"
                         render={(attrs) => (
                             <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                                 <PoperWrapper>
-                                    <SearchItem />
-                                    <SearchItem />
-                                    <SearchItem />
-                                    <SearchItem />
-                                    <SearchItem />
-                                    <SearchItem />
-                                    <SearchItem />
+                                    {searchResult.map((result,index) => <SearchItem key={index} data= {result}/>)}
                                 </PoperWrapper>
                             </div>
                         )}
                     >
                         <div className={cx('search')}>
-                            <input className={cx('search-input')} placeholder="Nhập từ khóa để tìm kiếm" />
+                            <input
+                                value={searchValue}
+                                onChange = {(e)=>setSearchValue(e.target.value)}
+                                onFocus = {() => setShowResult(true)}
+                                className={cx('search-input')} 
+                                placeholder="Nhập từ khóa để tìm kiếm" 
+                            />
                             <button className={cx('search-btn')}>
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </button>
