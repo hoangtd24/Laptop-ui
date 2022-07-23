@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import Slider from '~/layouts/components/Slider/Slider';
 import images from '~/assets/images';
+import Banner from '~/layouts/components/Banner/Banner';
 
 const cx = classNames.bind(styles)
 function Home() {
@@ -25,9 +26,26 @@ function Home() {
             src: images.slideImage6,
         },
     ];
+
+    const BannerImages1 = [
+        {
+            src: images.banner1,
+        },
+        {
+            src: images.banner2,
+        },
+        {
+            src: images.banner3,
+        },
+        {
+            src: images.banner4,
+        },
+        
+    ];
     return (
         <div className={cx('wrapper')}>
             <Slider images = {slideImages}/>
+            <Banner images = {BannerImages1}/>
         </div>
     );
 }

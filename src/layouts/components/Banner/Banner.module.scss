@@ -1,0 +1,19 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50%);
+}
+
+.banner-link{
+    border-radius: 8px;
+    margin: 0 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.banner{
+    transition: transform 0.3s ease 0s;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
