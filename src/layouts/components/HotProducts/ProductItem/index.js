@@ -1,4 +1,5 @@
 import classNames from "classnames/bind"
+import { Link } from "react-router-dom"
 import { Car } from "~/components/icons"
 import styles from "./ProductItem.module.scss"
 
@@ -7,7 +8,7 @@ const cx = classNames.bind(styles)
 
 function ProductItem({data}){
     return(
-        <div className={cx('product')}>
+        <Link to= {`@${data._id}`} className={cx('product')}>
             <img src = {data.image} className={cx('product-img')} />
             <div className = {cx('product-lable')}>
                 <p className = {cx('product-title')}>TIẾT KIỆM</p>
@@ -23,7 +24,7 @@ function ProductItem({data}){
                     <Car />
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

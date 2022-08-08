@@ -4,6 +4,12 @@
     transform: translateY(-50%);
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .banner-link{
     border-radius: 8px;
     margin: 0 8px;
@@ -16,4 +22,12 @@
     &:hover{
         transform: scale(1.05);
     }
+}
+
+.banner-name{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin-top: 16px;
 }

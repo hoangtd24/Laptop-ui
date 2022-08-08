@@ -3,10 +3,12 @@ import styles from './Home.module.scss';
 import Slider from '~/layouts/components/Slider/Slider';
 import images from '~/assets/images';
 import Banner from '~/layouts/components/Banner/Banner';
-import HotProducts from '~/components/HotProducts';
+import HotProducts from '~/layouts/components/HotProducts';
+import Brands from '~/layouts/components/Brands/Brands';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+
 
 const cx = classNames.bind(styles)
 function Home() {
@@ -46,12 +48,35 @@ function Home() {
         },
         
     ];
+
+    const brands = [
+        {
+            src: images.brand1,
+            name: 'Asus'
+        },
+        {
+            src: images.brand2,
+            name: 'Microsoft'
+        },
+        {
+            src: images.brand3,
+            name: 'Hp'
+        },
+        {
+            src: images.brand4,
+            name: 'Lenovo'
+        },
+        
+    ];
     return (
         <div className={cx('wrapper')}>
             <Slider images = {slideImages}/>
             <Banner images = {BannerImages1}/>
-            <HotProducts type = 'laptop' bgr={images.backgroundImage} name='Laptop' className={cx('slide-product')}/> 
-            <HotProducts type = 'chu' bgr={images.backgroundImage1} name='Chuột'className={cx('slide-product')}/>
+            <div className={cx('content')}>
+                <HotProducts type = 'laptop' bgr={images.backgroundImage} name='Laptop' className={cx('slide-product')}/> 
+                <HotProducts type = 'chu' bgr={images.backgroundImage1} name='Chuột'className={cx('slide-product')}/>
+                <Brands brands={brands}/>
+            </div>
         </div>
     );
 }

@@ -5,9 +5,12 @@ const cx = classNames.bind(styles)
 
 function BannerItem({image}){
     return(
-        <Link to = '/' className= {cx('banner-link')}>
-            <img src={image.src} className = {cx('banner')}/>
-        </Link>
+        <div className={cx('content')}>
+            <Link to = '/' className= {cx('banner-link')}>
+                <img src={image.src} className = {cx('banner')}/>
+            </Link>
+            <span className={cx('banner-name')}>{image.name}</span>
+        </div>
     )
 }
 

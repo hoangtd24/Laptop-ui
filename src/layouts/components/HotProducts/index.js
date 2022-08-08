@@ -25,7 +25,7 @@ function HotProducts({type,bgr,name,className}){
         slidesToScroll: 1
     }; 
     return(
-        <Link to = "/" className={cx('wrapper',{[className]:className})}>
+        <div to = "/" className={cx('wrapper',{[className]:className})}>
             <div className={cx('container')} style={{backgroundImage:`url(${bgr})`}}>
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
@@ -37,12 +37,12 @@ function HotProducts({type,bgr,name,className}){
                 <div className={cx('content')}>
                     <Slider {...settings} className={cx('slider')}>
                         {
-                            products.map(product => <ProductItem data = {product} key={product.id}/>)
+                            products.map(product => <ProductItem data = {product} key={product._id}/>)
                         }
                     </Slider>
                 </div>
             </div>
-        </Link>
+        </div>
     )
 }
 
