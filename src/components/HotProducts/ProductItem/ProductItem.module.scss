@@ -1,0 +1,89 @@
+.product{
+    position: relative;
+    width: 225px;
+    height: 310px;
+    margin: 0 6px;
+    background-color: white;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img{
+    transition: transform 0.3s ease-in 0s;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+
+.product-lable{
+    position: absolute;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA5NiA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iOTYiIGhlaWdodD0iNDAiIHJ4PSI0IiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIiAvPgogIDxtYXNrIGlkPSJtYXNrMCIgbWFzay10eXBlPSJhbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0iMCIgd2lkdGg9Ijk2IiBoZWlnaHQ9IjQwIj4KICAgIDxyZWN0IHdpZHRoPSI5NiIgaGVpZ2h0PSI0MCIgcng9IjQiIGZpbGw9IndoaXRlIiAvPgogIDwvbWFzaz4KICA8ZyBtYXNrPSJ1cmwoI21hc2swKSI+CiAgICA8cGF0aCBvcGFjaXR5PSIwLjMiCiAgICAgIGQ9Ik03NC4yNDQ2IC05LjAyODY5TDY1Ljg3NjcgOC45MTYyMUw3MC43NzA4IDExLjE5ODNMNjMuOTI0NCAyNS44ODA1TDg0LjQ3MjQgMTEuNjI5M0w3Ny45NDcgOC41ODY0Mkw5MC41NTgxIC0xLjQyMTU2TDc0LjI0NDYgLTkuMDI4NjlaIgogICAgICBmaWxsPSIjMUIxRDI5IiAvPgogIDwvZz4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjM1LjcyMDkiIHkxPSIxLjY2NTQ0ZS0wNiIgeDI9IjU3Ljg4ODYiIHkyPSI0MC4wODczIgogICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiNBQTIwRkYiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzQxM0VGRiIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgo8L3N2Zz4=');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 36px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    left: 16px;
+    bottom: 16px;
+}
+
+.product-title{
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.2rem;
+    color: rgb(255, 213, 145);
+}
+
+.product-save{
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    line-height: 1.4rem;
+}
+
+.product-name{
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+    color: #434657;
+    margin-top: 18px;
+    height: 28px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-info{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.product-price{
+    flex: 1;
+}
+
+.product-price-current{
+    color: rgb(20, 53, 195);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin: 0;
+}
+
+.product-price-old{
+    color: rgb(130, 134, 158);
+    font-weight: 400;
+    margin: 0;
+    font-size: 1.3rem;
+    line-height: 16px;
+    text-decoration: line-through;
+}
+
+.product-transport{
+
+}

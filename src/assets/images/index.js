@@ -10,6 +10,8 @@ const images = {
     banner2: require('~/assets/images/banner2.webp'),
     banner3: require('~/assets/images/banner3.webp'),
     banner4: require('~/assets/images/banner4.webp'),
+    backgroundImage: require('~/assets/images/bgr.png'),
+    backgroundImage1: require('~/assets/images/bgr1.png')
 }
 
 export default images

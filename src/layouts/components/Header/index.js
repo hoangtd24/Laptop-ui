@@ -28,7 +28,7 @@ function Header() {
     useEffect(() => {
         if(!searchValue.trim()){
             setSearchResult([])
-            return
+            return;
         }
         fetch(`https://api-laptop-shop.herokuapp.com/api/products?search=${searchValue}`)
         .then(res=> res.json())
