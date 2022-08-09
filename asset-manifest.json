@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/Laptop-ui/static/css/main.fb08a2dd.css",
+    "main.js": "/Laptop-ui/static/js/main.e96ef7e4.js",
+    "static/js/787.0ff32180.chunk.js": "/Laptop-ui/static/js/787.0ff32180.chunk.js",
+    "static/media/image4.webp": "/Laptop-ui/static/media/image4.1f86c5d11cade10d2f60.webp",
+    "static/media/image2.webp": "/Laptop-ui/static/media/image2.f61ec8f4b8cd05e02e4d.webp",
+    "static/media/image6.webp": "/Laptop-ui/static/media/image6.af889db4d01a23afa197.webp",
+    "static/media/image1.webp": "/Laptop-ui/static/media/image1.934d50e53f0aa29f783d.webp",
+    "static/media/image3.webp": "/Laptop-ui/static/media/image3.7d69ffd4a3ad0e80b3de.webp",
+    "static/media/bgr1.png": "/Laptop-ui/static/media/bgr1.7c0b5b56d8cd837d0b5f.png",
+    "static/media/bgr.png": "/Laptop-ui/static/media/bgr.88b4d4dac5e9af4ca1d0.png",
+    "static/media/image5.webp": "/Laptop-ui/static/media/image5.43288c81e00b08cd0794.webp",
+    "static/media/brand3.webp": "/Laptop-ui/static/media/brand3.cb76f95470e358dccfd1.webp",
+    "static/media/brand2.webp": "/Laptop-ui/static/media/brand2.47d81605c41660aa729d.webp",
+    "static/media/brand4.webp": "/Laptop-ui/static/media/brand4.473d61ef7cbece012ccb.webp",
+    "static/media/banner1.webp": "/Laptop-ui/static/media/banner1.6d010138bf7888213a23.webp",
+    "static/media/banner3.webp": "/Laptop-ui/static/media/banner3.d73a44ddfc2ca337b2ba.webp",
+    "static/media/banner4.webp": "/Laptop-ui/static/media/banner4.4a3df75f65a26c4f1fb8.webp",
+    "static/media/brand1.webp": "/Laptop-ui/static/media/brand1.6339e772971e235a971a.webp",
+    "static/media/banner2.webp": "/Laptop-ui/static/media/banner2.ccbcafccc120636da15e.webp",
+    "static/media/logo-full.svg": "/Laptop-ui/static/media/logo-full.b542310464ccb44dd5f7465a8219c94c.svg",
+    "static/media/slick.svg": "/Laptop-ui/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Laptop-ui/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Laptop-ui/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Laptop-ui/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/money.svg": "/Laptop-ui/static/media/money.bd34abf67becf64e58f06b459fff0450.svg",
+    "static/media/qr.svg": "/Laptop-ui/static/media/qr.b08d3e0bc79bda89c95ce83879937395.svg",
+    "index.html": "/Laptop-ui/index.html",
+    "static/media/banking.svg": "/Laptop-ui/static/media/banking.5a98fa3345abc0d08e2a32ba370e6df0.svg",
+    "static/media/time.svg": "/Laptop-ui/static/media/time.8bac589097928ffef8cd4a62564e9434.svg",
+    "main.fb08a2dd.css.map": "/Laptop-ui/static/css/main.fb08a2dd.css.map",
+    "main.e96ef7e4.js.map": "/Laptop-ui/static/js/main.e96ef7e4.js.map",
+    "787.0ff32180.chunk.js.map": "/Laptop-ui/static/js/787.0ff32180.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb08a2dd.css",
+    "static/js/main.e96ef7e4.js"
+  ]
+}
