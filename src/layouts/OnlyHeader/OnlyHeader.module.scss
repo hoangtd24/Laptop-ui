@@ -1,3 +1,22 @@
+
+.wrapper{
+    position: relative;
+}
+
 .container{
     width: 100%;
+}
+
+.scroll-top{
+    position: fixed;
+    right: 48px;
+    bottom: 100px;
+    width: 40px;
+    height: 40px;
+    border-radius:50% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+    cursor: pointer;
 }

@@ -1,5 +1,9 @@
 const images = {
     logofull: require('~/assets/images/logo-full.svg').default,
+    qr: require('~/assets/images/qr.svg').default,
+    money: require('~/assets/images/money.svg').default,
+    time: require('~/assets/images/time.svg').default,
+    banking: require('~/assets/images/banking.svg').default,
     slideImage1: require('~/assets/images/image1.webp'),
     slideImage2: require('~/assets/images/image2.webp'),
     slideImage3: require('~/assets/images/image3.webp'),

@@ -145,16 +145,18 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 0 16px;
+    padding: 0px 16px;
     height: 96px;
     background-color: var(--white);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .caculate-info{
     border-top: 1px dotted #ccc;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 2px 0;
 
 }
 
