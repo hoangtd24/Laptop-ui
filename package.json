@@ -58,6 +58,5 @@
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1",
     "sass": "^1.53.0"
-  },
-  "homepage": "https://hoangtd24.github.io/Laptop-ui"
+  }
 }
