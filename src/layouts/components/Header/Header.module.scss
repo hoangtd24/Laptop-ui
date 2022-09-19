@@ -182,3 +182,22 @@
 .custom-cart-btn{
     width: 100%;
 }
+
+.cart{
+    position: relative;
+}
+.cart-quantity{
+    position: absolute;
+    width: 20px;
+    border-radius: 50%;
+    background-color: red;
+    opacity: 0.8;
+    font-weight: 400;
+    color: #333;
+    top: 0px;
+    right: 24px;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

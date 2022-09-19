@@ -19,7 +19,8 @@ const images = {
     brand3: require('~/assets/images/brand3.webp'),
     brand4: require('~/assets/images/brand4.webp'),
     backgroundImage: require('~/assets/images/bgr.png'),
-    backgroundImage1: require('~/assets/images/bgr1.png')
+    backgroundImage1: require('~/assets/images/bgr1.png'),
+    adver: require('~/assets/images/qc.png')
 }
 
 export default images

@@ -1,6 +1,6 @@
 import OnlyHeader from "~/layouts/OnlyHeader"
 import Coupon from "~/pages/Coupon/Coupon"
-import Detail from "~/pages/Detail"
+import Detail from "~/pages/Detail/detailProduct"
 import Home from "~/pages/Home/Home"
 import Order from "~/pages/Order/Order"
 import Profile from "~/pages/Profile/Profile"

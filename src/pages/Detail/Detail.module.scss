@@ -1,0 +1,265 @@
+.wrapper{
+    padding-top: 24px;
+    background-color: #f3f3f3;
+}
+
+.product__info{
+    display: flex;
+    background-color: var(--white);
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.info-product{
+    width: 40%;
+}
+.product-img{
+    width: 100%;
+}
+
+.product-setting{
+    border-top: 1px dashed #d9d9d9;
+    padding: 24px 16px;
+    margin-top: 34px;
+}
+
+.product-setting-item{
+    font-size: 1.4rem;
+}
+
+.product__discount{
+    width: 60%;
+    padding-left: 24px;
+}
+
+.product-name{
+    font-size: 2.4rem;
+    color: var(--black);
+}
+
+.product-trademark{
+    display: flex;
+}
+
+.trademark{
+    display: flex;
+    padding-right: 12px;
+    border-right: 2px solid #82869e;
+}
+
+.trademark-title{
+    font-size: 1.4rem;
+    color: #82869e;
+    margin: 0;
+}
+
+.trademark-name{
+    color: rgb(20, 53, 195);
+}
+
+
+.product-quantity{
+    color: rgb(247, 130, 18);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.trademark-store{
+    margin:0;
+    font-size: 1.4rem;
+    color: #82869e;
+    margin-left: 12px;
+}
+
+.product-price{
+    height: 40px;
+}
+.product-price-current{
+    font-size: 2rem;
+    color: #1435c3;
+    font-weight: 700;
+    margin: 0;
+}
+
+.product-price-old{
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: #82869E;
+    font-weight: 400;
+}
+
+.product-promo{
+    margin-top: 36px;
+    padding-top: 16px;
+    border-top: 1px dashed #d9d9d9;
+}
+
+.promo-title{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.promo-item{
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-top: 16px;
+    &.active{
+        border-color: rgb(20, 53, 195);
+    }
+}
+.promo-img{
+    width: 64px;
+    height: 64px;
+    background-color: rgb(232, 235, 249);
+    border-radius: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+}
+
+
+.promo-price{
+    color: rgb(67, 70, 87);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+.promo-condition{
+    font-size: 1.2rem;
+    color: rgb(132, 135, 136);
+    margin: 0;
+}
+.promo-expiry{
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(132, 135, 136);
+    margin: 0;
+}
+
+.product-shopping{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.buying-btn{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+}
+
+.cart-btn{
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+//related-promote
+
+.related-promo{
+    margin-top: 24px;
+    padding-top: 30px;
+    border-top: 1px dashed #d9d9d9;
+}
+
+.related-title{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.related-list{
+    margin-right: 12px;
+    padding-left: 0;
+    margin-left: 32px;
+}
+
+.related-item{
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+}
+
+//policy
+
+.product__policy{
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.policy-transport{
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #d9d9d9;
+
+
+}
+.policy-transport span{
+    font-size: 1.4rem;
+    margin-left: 8px;
+    color: rgb(83, 195, 5);
+}
+
+.policy-sale{
+    margin-top: 16px;
+}
+
+.policy-sale-heading{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.policy-sale-item + .policy-sale-item{
+    margin-top: 8px;
+}
+
+.policy-sale-item span{
+    font-size: 1.4rem;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.adver{
+    border-radius: 8px;
+    margin-top: 24px;
+}
+
+//description
+
+.describe-content{
+    display: flex;
+    background-color: var(--white);
+    margin-top: 24px;
+    border-radius: 8px;
+}
+
+
+.describe{
+    padding: 16px;
+    width: 800px;
+}
+
+.describe > h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 36px;
+}
+
+.describe strong{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.describe p{
+    font-size: 1.4rem;
+}
+
+.describe img{
+    width: 100%;
+}

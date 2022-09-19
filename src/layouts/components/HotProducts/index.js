@@ -11,13 +11,14 @@ import ProductItem from "./ProductItem"
 const cx = classNames.bind(styles)
 
 function HotProducts({type,bgr,name,className}){
+    const apiProducts = `https://api-laptop-shop.herokuapp.com/api/products?search=${type}`
 
     const [products,setProducts] = useState([])
     useEffect(()=>{
-        fetch(`https://api-laptop-shop.herokuapp.com/api/products?search=${type}`)
+        fetch(apiProducts)
         .then(res=>res.json())
         .then(res=>setProducts(res.listProducts))
-    },[])
+    },[type])
     const settings = {
         infinite: true,
         speed: 500,
@@ -25,7 +26,7 @@ function HotProducts({type,bgr,name,className}){
         slidesToScroll: 1
     }; 
     return(
-        <div to = "/" className={cx('wrapper',{[className]:className})}>
+        <div className={cx('wrapper',{[className]:className})}>
             <div className={cx('container')} style={{backgroundImage:`url(${bgr})`}}>
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
