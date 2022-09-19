@@ -47,7 +47,7 @@ function Header() {
             icon: <User width='18px' height = '18px' />
         },
         {
-            path: '/order',
+            path: '/cart',
             title: 'Quản lí đơn hàng',
             icon: <Order width='18px' height = '18px' />
         },
@@ -104,7 +104,7 @@ function Header() {
 
                 <div className={cx('actions')}>
                     <ActionItem icon={<Promote />} title="Khuyến mãi" to="/khuyenmai" />
-                    <ActionItem icon={<Order />} title="Đơn hàng" to="/order" />
+                    <ActionItem icon={<Order />} title="Đơn hàng" to="/cart" />
                     {isSignIn ? (
                         <Menu items = {userMenu}>
                             <ActionItem icon={<User />} title="Tống Hoàng" />
