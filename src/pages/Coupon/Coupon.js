@@ -1,5 +1,14 @@
+import classNames from "classnames/bind";
+import styles from "./Coupon.module.scss"
+
+const cx = classNames.bind(styles)
+
 function Coupon() {
-    return <h2>Coupon Page</h2>;
+    return (
+        <div className={cx("wrapper")}>
+            <h2>Updating...</h2>
+        </div>
+    );
 }
 
 export default Coupon;

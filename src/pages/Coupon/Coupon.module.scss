@@ -1,0 +1,9 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.wrapper > h2{
+    margin-top: 32px;
+}

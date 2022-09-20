@@ -134,13 +134,20 @@ function Detail(){
                                     </div>
                                 </div>
                                 <div className = {cx('product-shopping')}>
-                                    <Button primary large className = {cx('buying-btn')}>Mua Ngay</Button>
+                                    <Button 
+                                        to="/cart"
+                                        primary 
+                                        large 
+                                        className = {cx('buying-btn')}
+                                        onClick = {() => handleAddItem()}
+                                    >
+                                        Mua Ngay
+                                    </Button>
                                     <Button 
                                         large 
                                         primary 
                                         className = {cx('cart-btn')}
-                                        onClick = {() => handleAddItem()
-                                }
+                                        onClick = {() => handleAddItem()}
                                     >
                                         Thêm vào giỏ hàng
                                     </Button>

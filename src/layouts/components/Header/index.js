@@ -103,7 +103,7 @@ function Header() {
                 </div>
 
                 <div className={cx('actions')}>
-                    <ActionItem icon={<Promote />} title="Khuyến mãi" to="/khuyenmai" />
+                    <ActionItem icon={<Promote />} title="Khuyến mãi" to="/coupon" />
                     <ActionItem icon={<Order />} title="Đơn hàng" to="/cart" />
                     {isSignIn ? (
                         <Menu items = {userMenu}>

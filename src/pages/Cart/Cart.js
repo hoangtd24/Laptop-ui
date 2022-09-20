@@ -11,6 +11,7 @@ const cx = classNames.bind(styles)
 
 function Cart() {
 
+    const {dispatch} = useContext(CartContext)
     const {state} = useContext(CartContext)
     const totalPriceOrder = state.reduce((prev,current) => prev + current.product.newprice * current.quantity,0)
     return (
@@ -27,7 +28,9 @@ function Cart() {
                         <div className={cx("cart")}>
                             <div className={cx("cart-info")}>
                                 <h1 className={cx("heading")}>Giỏ hàng</h1>
-                                <Button>Xóa tất cả</Button>
+                                <Button onClick={()=> dispatch({
+                                    type: "remove_cart"
+                                })}>Xóa tất cả</Button>
                             </div>
                             <div className={cx("cart-container")}>
                                 <div className={cx("cart-heading")}>
@@ -48,11 +51,33 @@ function Cart() {
                                         </div>
                                         <div className={cx("cart-quantity")}>
                                             <div className={cx("cart-quantity-action")}>
-                                                <FontAwesomeIcon icon={faMinus} className={cx("action-icon")}/>
+                                                <FontAwesomeIcon 
+                                                    icon={faMinus} 
+                                                    className={cx("action-icon",{prevent: item.quantity === 1})}
+                                                    onClick = {() => dispatch({
+                                                        type: "decrease_quantity",
+                                                        payload: index
+                                                    })}
+                                                />
                                                 <span className={cx("cart-item-quantity")}>{item.quantity}</span>
-                                                <FontAwesomeIcon icon={faPlus} className={cx("action-icon")}/>
+                                                <FontAwesomeIcon 
+                                                    icon={faPlus} 
+                                                    className={cx("action-icon")}
+                                                    onClick = {() => dispatch({
+                                                        type: "increase_quantity",
+                                                        payload: index
+                                                    })}
+                                                />
                                             </div>
-                                            <button className={cx("remove-item")}>Xóa</button>
+                                            <button 
+                                                className={cx("remove-item")}
+                                                onClick = {() => dispatch({
+                                                    type: "remove_item",
+                                                    payload: index
+                                                })}
+                                            >
+                                                Xóa
+                                            </button>
                                         </div>
                                         <p className={cx("total-price")}>{transferPrice(item.product.newprice * item.quantity)}</p>
                                     </div>
