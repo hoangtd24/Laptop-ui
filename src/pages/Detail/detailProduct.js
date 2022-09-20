@@ -8,6 +8,7 @@ import images from "~/assets/images"
 import transferPrice from "~/components/TranferPrice/tranferPrice"
 import ProductSpecifications from "~/layouts/components/productSpecifications/ProductSpecifications"
 import { CartContext } from "~/context/Context"
+import Toast from "~/components/Toast/Toast"
 
 const cx = classNames.bind(styles)
 
@@ -19,6 +20,7 @@ function Detail(){
     const productId = useParams()
     const [promoActive,setPromoActive] = useState(true)
     const [productData, setProductData] = useState({})
+    const [showToast,setShowToast] = useState(false)
     
     function createMarkup() {
         return {__html: productData.content};
@@ -35,6 +37,15 @@ function Detail(){
             </div>
         );
       }
+      function handleAddItem(){
+            setShowToast(true)
+            dispatch({
+            type: 'add_item',
+            payload: productData})
+            setTimeout(() => {
+                setShowToast(false)
+            },3000)
+      }
 
     useEffect(() => {
         fetch(`https://api-laptop-shop.herokuapp.com/api/products?`)
@@ -45,6 +56,7 @@ function Detail(){
     },[])
     return(
         <div className={cx("wrapper")}>
+            {showToast && <Toast/>}
             <div className = {cx("grid")}>
                 <nav aria-label="breadcrumb">
                     <ol className={cx("breadcrumb")}>
@@ -127,10 +139,8 @@ function Detail(){
                                         large 
                                         primary 
                                         className = {cx('cart-btn')}
-                                        onClick = {() => dispatch({
-                                            type: 'add_item',
-                                            payload: productData
-                                        })}
+                                        onClick = {() => handleAddItem()
+                                }
                                     >
                                         Thêm vào giỏ hàng
                                     </Button>
