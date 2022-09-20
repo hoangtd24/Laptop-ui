@@ -4,7 +4,7 @@ export function CartReducer(state, action){
             {
                 const index = state.findIndex(item => item.product._id === action.payload._id)
                 if(index >= 0){
-                    state[index].quantity += 0.5;
+                    state[index].quantity += 1;
                     console.log(state)
                     return [...state]
                 }
@@ -15,13 +15,13 @@ export function CartReducer(state, action){
         case "increase_quantity":
             {
                 const index = action.payload;
-                state[index].quantity += 0.5;
+                state[index].quantity += 1;
                 return [...state]
             }
         case "decrease_quantity":
             {
                 const index = action.payload;
-                state[index].quantity -= 0.5;
+                state[index].quantity -= 1;
                 return [...state]
             }
         case "remove_item":
