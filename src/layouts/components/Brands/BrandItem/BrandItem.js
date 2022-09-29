@@ -6,7 +6,7 @@ function BrandItem({data}){
     return (
         <div className={cx('brand')}>
             <div className={cx('brand-img')}>
-                <img className={cx('img')} src = {data.src} />
+                <img className={cx('img')} src = {data.src} alt=""/>
             </div>
             <span className={cx('brand-name')}>{data.name}</span>
         </div>

@@ -9,6 +9,8 @@ import transferPrice from "~/components/TranferPrice/tranferPrice"
 import ProductSpecifications from "~/layouts/components/productSpecifications/ProductSpecifications"
 import { CartContext } from "~/context/Context"
 import Toast from "~/components/Toast/Toast"
+import axios from "axios"
+import LazyLoad from "react-lazyload"
 
 const cx = classNames.bind(styles)
 
@@ -19,11 +21,16 @@ function Detail(){
 
     const productId = useParams()
     const [promoActive,setPromoActive] = useState(true)
-    const [productData, setProductData] = useState({})
+    const [products, setProducts] = useState([])
     const [showToast,setShowToast] = useState(false)
-    
+
+    function getDataProduct(){
+        const data = products.find(product => product._id === productId.title)
+        return data
+    }
+
     function createMarkup() {
-        return {__html: productData.content};
+        return {__html: getDataProduct().content};
       }
       
       function MyComponent() {
@@ -31,7 +38,7 @@ function Detail(){
             <div className={cx("describe-content")}>
                 <div className ={cx("describe")}>
                     <h1>Mô tả sản phẩm</h1>
-                    <div className = {cx("description")} dangerouslySetInnerHTML={createMarkup()} />
+                    {getDataProduct() && <div className = {cx("description")} dangerouslySetInnerHTML={createMarkup()} />}
                 </div>
                 <ProductSpecifications />
             </div>
@@ -41,18 +48,21 @@ function Detail(){
             setShowToast(true)
             dispatch({
             type: 'add_item',
-            payload: productData})
+            payload: getDataProduct()})
             setTimeout(() => {
                 setShowToast(false)
             },3000)
       }
 
     useEffect(() => {
-        fetch(`https://api-laptop-shop.herokuapp.com/api/products?`)
-            .then(res => res.json())
-            .then(res => {
-                setProductData(res.listProducts.find(item => item._id === productId.title))
-            })
+        const getDataLaptop = async () =>{
+            for(let i = 1; i<=10; i++){
+                const response = await axios.get(`https://api-laptop-shop.herokuapp.com/api/products?page=${i}`)
+                setProducts(prev => [...prev, ...response.data.listProducts])
+            }
+            
+        }
+        getDataLaptop();
     },[])
     return(
         <div className={cx("wrapper")}>
@@ -66,9 +76,10 @@ function Detail(){
                 </nav>
                 <div className = {cx("grid__row")}>
                     <div className = {cx("grid__column-9")}>
+                        {getDataProduct() && 
                         <div className = {cx("product__info")}>
                             <div className={cx("info-product")}>
-                                <img className = {cx("product-img")} src={productData.image} alt="" />
+                                <img className = {cx("product-img")} src={getDataProduct().image} alt="" />
                                 <div className= {cx("product-setting")}>
                                     <p className = {cx("product-setting-item")}>
                                         - CPU: Intel Core i7-10510U
@@ -97,7 +108,7 @@ function Detail(){
                                 </div>
                             </div>
                             <div className= {cx("product__discount")}>
-                                <h1 className= {cx('product-name')}>{productData.title}</h1>
+                                <h1 className= {cx('product-name')}>{getDataProduct().title}</h1>
                                 <div className= {cx('product-trademark')}>
                                     <div className={cx('trademark')}>
                                         <p className = {cx('trademark-title')}>Thương hiệu: </p>
@@ -105,14 +116,14 @@ function Detail(){
                                     </div>
                                     <p className = {cx('trademark-store')}>SKU: 220609880</p>
                                 </div>
-                                <p className={cx("product-quantity")}>Chỉ còn lại {productData.quantity} sản phẩm</p>
+                                <p className={cx("product-quantity")}>Chỉ còn lại {getDataProduct().quantity} sản phẩm</p>
                                 <div className= {cx('product-info')}>
                                     <div className={cx('product-price')}>
                                         {promoActive ? 
-                                        <p className = {cx('product-price-current')}>{productData.newprice && transferPrice(productData.newprice)}</p>
+                                        <p className = {cx('product-price-current')}>{getDataProduct().newprice && transferPrice(getDataProduct().newprice)}</p>
                                             : 
-                                        <p className = {cx('product-price-current')}>{productData.oldprice && transferPrice(productData.oldprice)}</p>}
-                                        {promoActive && <p className = {cx('product-price-old')}>{productData.oldprice && transferPrice(productData.oldprice)}</p>}
+                                        <p className = {cx('product-price-current')}>{getDataProduct().oldprice && transferPrice(getDataProduct().oldprice)}</p>}
+                                        {promoActive && <p className = {cx('product-price-old')}>{getDataProduct().oldprice && transferPrice(getDataProduct().oldprice)}</p>}
                                     </div>
                                 </div>
                                 <div className = {cx('product-promo')}>
@@ -126,7 +137,7 @@ function Detail(){
                                         </div>
                                         <div className={cx('promo-info')}>
                                             <p className = {cx('promo-price')}>
-                                                Giảm {productData.newprice && transferPrice(productData.oldprice - productData.newprice)} / Chiếc
+                                                Giảm {getDataProduct().newprice && transferPrice(getDataProduct().oldprice - getDataProduct().newprice)} / Chiếc
                                             </p>
                                             <p className = {cx('promo-condition')}>Khi mua từ 1 Chiếc trở lên</p>
                                             <p className = {cx('promo-expiry')}>HSD: 22/12/2022</p>
@@ -173,6 +184,7 @@ function Detail(){
                                 </div>
                             </div>
                         </div>
+                        }
                     </div>
                     <div className = {cx("grid__column-3")}>
                         <div className={cx("product__policy")}>
@@ -214,7 +226,7 @@ function Detail(){
                         </div>
                     </div>
                 </div>
-                {MyComponent()}
+                <LazyLoad>{MyComponent()}</LazyLoad>
             </div>
         </div>
 
