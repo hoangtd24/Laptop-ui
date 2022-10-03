@@ -9,6 +9,7 @@ function Button(
         to,
         href,
         primary = false,
+        outline,
         small = false,
         large = false,
         leftIcon = false,
@@ -35,6 +36,7 @@ function Button(
     const classes = cx('wrapper', {
         [className]: className,
         primary,
+        outline,
         small,
         large,
         leftIcon,

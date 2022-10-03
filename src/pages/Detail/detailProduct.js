@@ -67,15 +67,15 @@ function Detail(){
     return(
         <div className={cx("wrapper")}>
             {showToast && <Toast/>}
-            <div className = {cx("grid")}>
+            <div className = {cx("container-lg")}>
                 <nav aria-label="breadcrumb">
                     <ol className={cx("breadcrumb")}>
                         <li className={cx("breadcrumb-item")}><a href="/">Home</a></li>
                         <li className={cx("breadcrumb-item active")} aria-current="page">Detail</li>
                     </ol>
                 </nav>
-                <div className = {cx("grid__row")}>
-                    <div className = {cx("grid__column-9")}>
+                <div className = {cx("row")}>
+                    <div className = {cx("col-9")}>
                         {getDataProduct() && 
                         <div className = {cx("product__info")}>
                             <div className={cx("info-product")}>
@@ -144,20 +144,20 @@ function Detail(){
                                         </div>
                                     </div>
                                 </div>
-                                <div className = {cx('product-shopping')}>
+                                <div className = {cx('row mt-5 justify-content-between mx-0')}>
                                     <Button 
                                         to="/cart"
-                                        primary 
                                         large 
-                                        className = {cx('buying-btn')}
+                                        primary 
+                                        className = {cx('col-5')}
                                         onClick = {() => handleAddItem()}
                                     >
                                         Mua Ngay
                                     </Button>
                                     <Button 
                                         large 
-                                        primary 
-                                        className = {cx('cart-btn')}
+                                        outline
+                                        className = {cx('col-5')}
                                         onClick = {() => handleAddItem()}
                                     >
                                         Thêm vào giỏ hàng
@@ -186,7 +186,7 @@ function Detail(){
                         </div>
                         }
                     </div>
-                    <div className = {cx("grid__column-3")}>
+                    <div className = {cx("col-3")}>
                         <div className={cx("product__policy")}>
                             <div className = {cx("policy-transport")}>
                                 <Car />
@@ -221,7 +221,7 @@ function Detail(){
                                     <Shield />
                                     <span>Bảo hành tại nhà.</span>
                                 </div>
-                                <img className = {cx("adver")}src = {images.adver} alt="" />
+                                <img className = {cx("img-fluid mt-5 rounded-4")} src = {images.adver} alt="" />
                             </div>
                         </div>
                     </div>

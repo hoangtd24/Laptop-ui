@@ -30,11 +30,29 @@ function HotProducts({type,bgr,name,className}){
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToScroll: 2,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2,
+                arrows: false,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: false,
+              }
+            }
+          ]
     }; 
     return(
-        <div className={cx('wrapper',{[className]:className})}>
-            <div className={cx('container')} style={{backgroundImage:`url(${bgr})`}}>
+        <div className={cx('wrapper mx-md-3',{[className]:className})}>
+            <div className={cx('container-lg p-0 rounded-4')} style={{backgroundImage:`url(${bgr})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
                     <Link to = '/' className = {cx('see-all')}>

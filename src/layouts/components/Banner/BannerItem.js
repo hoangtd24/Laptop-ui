@@ -7,7 +7,7 @@ function BannerItem({image}){
     return(
         <div className={cx('content')}>
             <Link to = '/' className= {cx('banner-link')}>
-                <img src={image.src} className = {cx('banner')}/>
+                <img src={image.src} className = {cx('img-fluid rounded-4')} alt=""/>
             </Link>
             <span className={cx('banner-name')}>{image.name}</span>
         </div>

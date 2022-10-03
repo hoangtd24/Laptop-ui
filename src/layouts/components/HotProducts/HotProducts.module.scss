@@ -1,18 +1,7 @@
 .wrapper{
+    max-width: 1232px;
     display: flex;
     justify-content: center;
-}
-
-.container{
-    width: 1232px;
-    height: 416px;
-    max-height: 416px;
-    display: flex;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px;
 }
 
 

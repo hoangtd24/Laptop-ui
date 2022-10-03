@@ -4,7 +4,6 @@ import { Car } from "~/components/icons"
 import styles from "./ProductItem.module.scss"
 import transferPrice from "~/components/TranferPrice/tranferPrice"
 
-
 const cx = classNames.bind(styles)
 
 function ProductItem({data}){

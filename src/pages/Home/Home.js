@@ -8,6 +8,7 @@ import Brands from '~/layouts/components/Brands/Brands';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import SuggestProducts from '~/components/SuggestProducts/SuggestProducts';
 
 
 const cx = classNames.bind(styles)
@@ -15,9 +16,6 @@ function Home() {
     const slideImages = [
         {
             src: images.slideImage1,
-        },
-        {
-            src: images.slideImage2,
         },
         {
             src: images.slideImage3,
@@ -30,6 +28,12 @@ function Home() {
         },
         {
             src: images.slideImage6,
+        },
+        {
+            src: images.slideImage7,
+        },
+        {
+            src: images.slideImage8,
         },
     ];
 
@@ -76,6 +80,7 @@ function Home() {
                 <HotProducts type = 'laptop' bgr={images.backgroundImage} name='Laptop' className={cx('slide-product')}/> 
                 <HotProducts type = 'chu' bgr={images.backgroundImage1} name='Chuột'className={cx('slide-product')}/>
                 <Brands brands={brands}/>
+                <SuggestProducts />
             </div>
         </div>
     );

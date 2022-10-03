@@ -7,7 +7,15 @@ const cx = classNames.bind(styles)
 function Banner({images}){
     return(
         <div className={cx('wrapper')}>
-            {images.map((image, index) => <BannerItem key= {index} image={image}/>)}
+            <div className={cx("container-lg")}>
+                <div className={cx("row justify-content-between")}>
+                    {images.map((image, index) => 
+                    <div key= {index} className={cx("col-3 p-0")}>
+                        <BannerItem image={image}/>
+                    </div>
+                    )}
+                </div>
+            </div>
         </div>
         
     )

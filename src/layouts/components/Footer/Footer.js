@@ -33,12 +33,6 @@ function Footer(){
             title: 'Chính sách mua hàng và bảo hành',
             items: [
                 {
-                    name: 'Quy định chung'
-                },
-                {
-                    name: 'Chính sách bảo mật thông tin'
-                },
-                {
                     name: 'Chính sách vận chuyển và lắp đặt'
                 },
                 {
@@ -115,50 +109,56 @@ function Footer(){
     ]
     return(
         <div className={cx('wrapper')}>
-            <div className={cx('policy')}>
-                {
-                    policies.map((policy, index) => <Policy data= {policy} key={index}/>)
-                }
+            <div className={cx('container-lg')}>
+                <div className={cx('row row-cols-lg-5 row-cols-md-3')}>
+                    {
+                        policies.map((policy, index) => <Policy data= {policy} key={index}/>)
+                    }
+                </div>
             </div>
-            <div className={cx('payment')}>
+            <div className={cx('container-lg')}>
                 <h3 className={cx('payment-title')}>Phương thức thanh toán</h3>
                 <div className={cx('payment-list')}>
                     <Link to='/' className={cx('payment-item')}>
-                        <img src={images.qr} className = {cx('payment-img')} />
+                        <img src={images.qr} className = {cx('payment-img')} alt=""/>
                         <p className={cx('payment-name')}>QR Code</p>
                     </Link>
                     <Link to='/' className={cx('payment-item')}>
-                        <img src={images.money} className = {cx('payment-img')} />
+                        <img src={images.money} className = {cx('payment-img')} alt=""/>
                         <p className={cx('payment-name')}>Tiền mặt</p>
                     </Link>
                     <Link to='/' className={cx('payment-item')}>
-                        <img src={images.time} className = {cx('payment-img')} />
+                        <img src={images.time} className = {cx('payment-img')} alt=""/>
                         <p className={cx('payment-name')}>Trả góp</p>
                     </Link>
                     <Link to='/' className={cx('payment-item')}>
-                        <img src={images.banking} className = {cx('payment-img')} />
+                        <img src={images.banking} className = {cx('payment-img')} alt=""/>
                         <p className={cx('payment-name')}>Banking</p>
                     </Link>
                 </div>
             </div>
             <div className={cx('contact')}>
-                <div className={cx('copyright')}>
-                    <h2 className={cx('copyright-title')}>CÔNG TY CỔ PHẦN THƯƠNG MẠI - DỊCH VỤ PHONG VŨ</h2>
-                    <p className={cx('copyright-text')}>© 1997 - 2020 Công Ty Cổ Phần Thương Mại - Dịch Vụ Phong Vũ</p>
-                    <p className={cx('copyright-text')}>Giấy chứng nhận đăng ký doanh nghiệp: 0304998358 do Sở KH-ĐT TP.HCM cấp lần đầu ngày 30 tháng 05 năm 2007</p>
-                </div>
-                <div className={cx('location')}>
-                    <div className={cx('location-item')}>
-                        <p className={cx('location-name')}>Địa chỉ trụ sở chính</p>
-                        <p className={cx('location-address')}>Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh</p>
-                    </div>
-                    <div className={cx('location-item')}>
-                        <p className={cx('location-name')}>Văn phòng điều hành miền bắc</p>
-                        <p className={cx('location-address')}>Tầng 6, Số 1 Phố Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội</p>
-                    </div>
-                    <div className={cx('location-item')}>
-                        <p className={cx('location-name')}>Văn phòng điều hành miền nam</p>
-                        <p className={cx('location-address')}>Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                <div className={cx('container-lg py-5')}>
+                    <div className={cx('row justify-content-between')}>
+                        <div className={cx('col')}>
+                            <h2 className={cx('copyright-title')}>CÔNG TY CỔ PHẦN THƯƠNG MẠI - DỊCH VỤ PHONG VŨ</h2>
+                            <p className={cx('copyright-text')}>© 1997 - 2020 Công Ty Cổ Phần Thương Mại - Dịch Vụ Phong Vũ</p>
+                            <p className={cx('copyright-text')}>Giấy chứng nhận đăng ký doanh nghiệp: 0304998358 do Sở KH-ĐT TP.HCM cấp lần đầu ngày 30 tháng 05 năm 2007</p>
+                        </div>
+                        <div className={cx('col')}>
+                            <div className={cx('location-item')}>
+                                <p className={cx('location-name')}>Địa chỉ trụ sở chính</p>
+                                <p className={cx('location-address')}>Tầng 5, Số 117-119-121 Nguyễn Du, Phường Bến Thành, Quận 1, Thành Phố Hồ Chí Minh</p>
+                            </div>
+                            <div className={cx('location-item')}>
+                                <p className={cx('location-name')}>Văn phòng điều hành miền bắc</p>
+                                <p className={cx('location-address')}>Tầng 6, Số 1 Phố Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội</p>
+                            </div>
+                            <div className={cx('location-item')}>
+                                <p className={cx('location-name')}>Văn phòng điều hành miền nam</p>
+                                <p className={cx('location-address')}>Tầng 11 Minh Long Tower, số 17 Bà Huyện Thanh Quan, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const cx = classNames.bind(styles)
 
 function Policy({data}){
     return(
-        <div className={cx('wrapper')}>
+        <div className={cx('col my-4')}>
             <h3 className={cx('title')}>{data.title}</h3>
             {data.items.map((item, index) => <Button key= {index} className = {cx('text-small')}>{item.name}</Button>)}
         </div>
