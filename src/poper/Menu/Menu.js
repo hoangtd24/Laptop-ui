@@ -10,16 +10,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { logout } from "~/features/user/userSlice";
 import { auth } from "~/firebase";
+import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles)
 
 function Menu({children, items}) {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const handleLogOut = () => {
         auth.signOut();
         dispatch(logout());
         window.localStorage.removeItem('loginUser')
         toast.success("Bạn vừa đăng xuất");
+        navigate('/')
       };
     return ( 
         <Tippy

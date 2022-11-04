@@ -1,0 +1,33 @@
+.header-mobile{
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+} 
+
+.logo-mobile{
+    margin-bottom: 16px;
+}
+.search{
+    padding: 6px;
+    border-radius: 9999px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-btn{
+    color: #ccc;
+    padding: 4px;
+}
+
+@media (max-width: 576px) {
+    .header-mobile{
+        display: block;
+    }
+}

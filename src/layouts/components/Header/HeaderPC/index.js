@@ -9,7 +9,7 @@ import { Wrapper as PoperWrapper } from '~/poper';
 import SearchItem from '~/components/SearchItem';
 import ActionItem from '~/components/ActionItem';
 import { Address, Bell, Cart, News, Order, Promote, User } from '~/components/icons';
-import { Fragment, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CartItem from '~/components/CartItem/CartItem';
 import Button from '~/components/Button/Button';
 import Menu from '~/poper/Menu/Menu';
@@ -31,6 +31,7 @@ function Header() {
     const [showResult, setShowResult] = useState(true);
     const data = JSON.parse(localStorage.getItem('loginUser'));
     const { token } = useSelector((state) => state.user);
+    const { cartLists } = useSelector((state) => state.cart);
 
     const isSignIn = data ? data.token : token;
 
@@ -126,12 +127,12 @@ function Header() {
                                     to="/cart"
                                     className={cx('d-lg-flex d-md-none')}
                                 />
-                                {isSignIn ? (
+                                {!!isSignIn ? (
                                     <Menu items={userMenu}>
                                         <ActionItem icon={<User />} title="Tống Hoàng" />
                                     </Menu>
                                 ) : (
-                                    <ActionItem icon={<User />} title="Đăng nhập" to="/login"/>
+                                    <ActionItem icon={<User />} title="Đăng nhập" to="/login" />
                                 )}
 
                                 <div className={cx('d-lg-block d-md-none')}>
@@ -163,38 +164,50 @@ function Header() {
                                         delay={[0, 500]}
                                         render={(attrs) => (
                                             <div className={cx('cart-result')} tabIndex="-1" {...attrs}>
-                                                <div className={cx('cart-info')}>
-                                                    <div className={cx('no-cart')}>
-                                                        <img src="https://i.imgur.com/Drj57qu.png" alt="logo-cart" />
-                                                        <p className={cx('cart-title')}>
-                                                            Giỏ hàng chưa có sản phẩm nào
-                                                        </p>
-                                                        <button className={cx('buy-btn')}>Mua sắm ngay</button>
+                                                {cartLists.length <= 0 ? (
+                                                    <div className={cx('cart-info')}>
+                                                        <div className={cx('no-cart')}>
+                                                            <img
+                                                                src="https://i.imgur.com/Drj57qu.png"
+                                                                alt="logo-cart"
+                                                            />
+                                                            <p className={cx('cart-title')}>
+                                                                Giỏ hàng chưa có sản phẩm nào
+                                                            </p>
+                                                            <button className={cx('buy-btn')}>Mua sắm ngay</button>
+                                                        </div>
                                                     </div>
-                                                </div>
-
-                                                <div className={cx('caculate')}>
-                                                    <div className={cx('caculate-info')}>
-                                                        <p className={cx('caculate-title')}>Tổng tiền sản phẩm</p>
-                                                        <p className={cx('caculate-price')}>{}</p>
-                                                    </div>
-                                                    <div className={cx('cart-btn')}>
-                                                        <Button
-                                                            to="/cart"
-                                                            primary
-                                                            large
-                                                            className={cx('custom-cart-btn')}
-                                                        >
-                                                            Xem giỏ hàng
-                                                        </Button>
-                                                    </div>
-                                                </div>
+                                                ) : (
+                                                    <>
+                                                        {cartLists.map((item, index) => {
+                                                            return <CartItem key={index} data={item} />;
+                                                        })}
+                                                        <div className={cx('caculate')}>
+                                                            <div className={cx('caculate-info')}>
+                                                                <p className={cx('caculate-title')}>
+                                                                    Tổng tiền sản phẩm
+                                                                </p>
+                                                                <p className={cx('caculate-price')}>{}</p>
+                                                            </div>
+                                                            <div className={cx('cart-btn')}>
+                                                                <Button
+                                                                    to="/cart"
+                                                                    primary
+                                                                    large
+                                                                    className={cx('custom-cart-btn')}
+                                                                >
+                                                                    Xem giỏ hàng
+                                                                </Button>
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                )}
                                             </div>
                                         )}
                                     >
                                         <span className={cx('cart')}>
                                             <ActionItem icon={<Cart />} title="Giỏ hàng" />
-                                            <p className={cx('cart-quantity')}></p>
+                                            {cartLists.length > 0 && <p className={cx("cart-quantity")}>{cartLists.length}</p>}
                                         </span>
                                     </Tippy>
                                 </div>

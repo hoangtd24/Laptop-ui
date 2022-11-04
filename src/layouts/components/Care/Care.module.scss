@@ -13,3 +13,9 @@
     justify-content: right;
     align-items: center;
 }
+
+@media (max-width: 576px) {
+    .wrapper{
+        display: none;
+    }
+}

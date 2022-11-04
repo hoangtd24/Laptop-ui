@@ -97,7 +97,7 @@
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     width: 384px;
-    max-height: 400px;
+    min-height: 400px;
     box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px 0px;
     overflow: hidden auto;
     padding: 16px;
@@ -191,7 +191,6 @@
     width: 20px;
     border-radius: 50%;
     background-color: red;
-    opacity: 0.8;
     font-weight: 400;
     color: #333;
     top: 0px;
@@ -200,4 +199,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 576px) {
+    .wrapper{
+        display: none;
+    }
 }

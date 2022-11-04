@@ -5,17 +5,17 @@ import styles from "./CartItem.module.scss"
 
 const cx = classNames.bind(styles)
 
-function CartItem({item}) {
+function CartItem({data}) {
     return ( 
         <div className = {cx('wrapper')}>
-            <img className = {cx('img')} src ={item.product.image} alt = '' />
+            <img className = {cx('img')} src ={data.item.image} alt = '' />
             <div className = {cx('info')}>
-                <Link to = "" className = {cx('name')}>{item.product.title}</Link>
+                <Link to = "" className = {cx('name')}>{data.item.title}</Link>
                 <div className = {cx('quantity')}>
                     <span className = {cx('quantity-title')}>Số lượng </span>
-                    <span className = {cx('quantity-number')}>{item.quantity}</span>
+                    <span className = {cx('quantity-number')}>{data.quantity}</span>
                 </div>
-                <div className = {cx('price')}>{transferPrice(item.product.newprice)}</div>
+                <div className = {cx('price')}>{transferPrice(data.item.newprice)}</div>
             </div>
         </div>
     );

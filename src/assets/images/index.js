@@ -1,5 +1,6 @@
 const images = {
     logofull: require('~/assets/images/logo-full.svg').default,
+    logopc: require('~/assets/images/logo-pc.svg').default,
     qr: require('~/assets/images/qr.svg').default,
     money: require('~/assets/images/money.svg').default,
     time: require('~/assets/images/time.svg').default,

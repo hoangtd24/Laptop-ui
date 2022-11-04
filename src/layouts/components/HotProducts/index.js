@@ -55,7 +55,7 @@ function HotProducts({type,bgr,name,className}){
             <div className={cx('container-lg p-0 rounded-4')} style={{backgroundImage:`url(${bgr})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
-                    <Link to = '/' className = {cx('see-all')}>
+                    <Link to = '/search' className = {cx('see-all')}>
                         Xem tất cả
                         <FontAwesomeIcon icon={faAngleRight} className= {cx('arrow-right')}/>
                     </Link>
