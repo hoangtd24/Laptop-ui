@@ -52,7 +52,7 @@ function HotProducts({type,bgr,name,className}){
     }; 
     return(
         <div className={cx('wrapper mx-md-3',{[className]:className})}>
-            <div className={cx('container-lg p-0 rounded-4')} style={{backgroundImage:`url(${bgr})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
+            <div className={cx('slide-content')} style={{backgroundImage:`url(${bgr})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
                     <Link to = '/search' className = {cx('see-all')}>

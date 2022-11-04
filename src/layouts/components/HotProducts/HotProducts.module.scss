@@ -4,7 +4,12 @@
     justify-content: center;
 }
 
-
+.slide-content{
+    margin: auto;
+    width: 1200px;
+    border-radius: 8px;
+    max-width: 100%;
+}
 .header{
     display: flex;
     align-items: center;
