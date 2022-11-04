@@ -11,11 +11,6 @@
 .breadcrumb-wrap{
     width: 100%;
 }
-.cart{
-    display: flex;
-    flex-wrap: wrap;
-    width: 67%;
-}
 
 .cart-info{
     width: 100%;
@@ -127,17 +122,6 @@
     font-weight: bold;
     width: 16.667%;
     text-align: right;
-}
-
-.payment{
-    flex: 1 1;
-    box-shadow: 0px 2px 7px #ccc;
-    padding: 32px;
-    margin-left: 36px;
-    margin-bottom: 24px;
-    border-radius: 8px;
-    background-color: var(--white);
-    height: 200px;
 }
 
 .payment > p{

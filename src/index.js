@@ -3,15 +3,16 @@ import ReactDOM from 'react-dom/client';
 import App from '~/App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from '~/components/GlobalStyles'
-import Context from './context/Context.js';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <GlobalStyles>
-        <Context>
+        <Provider store={store}>
             <App />
-        </Context>
+        </Provider>
       </GlobalStyles>
   </React.StrictMode>
 );

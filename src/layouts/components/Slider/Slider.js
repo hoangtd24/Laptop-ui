@@ -8,7 +8,7 @@ const cx = classNames.bind(styles)
 
 function Slider({ images }) {
     return (
-        <Carousel interval={5000} indicators = {false}>
+        <Carousel interval={3000} indicators = {false}>
             {images.map((image, index) => (
                 <Carousel.Item key={index}>
                     <img src={image.src} className = {cx('img-fluid')} alt=""/>

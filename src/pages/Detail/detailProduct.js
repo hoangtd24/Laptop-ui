@@ -7,7 +7,6 @@ import Button from "~/components/Button/Button"
 import images from "~/assets/images"
 import transferPrice from "~/components/TranferPrice/tranferPrice"
 import ProductSpecifications from "~/layouts/components/productSpecifications/ProductSpecifications"
-import { CartContext } from "~/context/Context"
 import Toast from "~/components/Toast/Toast"
 import axios from "axios"
 import LazyLoad from "react-lazyload"
@@ -16,8 +15,6 @@ const cx = classNames.bind(styles)
 
 function Detail(){
 
-    const cartState = useContext(CartContext)
-    const {state,dispatch} = cartState
 
     const productId = useParams()
     const [promoActive,setPromoActive] = useState(true)
@@ -46,12 +43,6 @@ function Detail(){
       }
       function handleAddItem(){
             setShowToast(true)
-            dispatch({
-            type: 'add_item',
-            payload: getDataProduct()})
-            setTimeout(() => {
-                setShowToast(false)
-            },3000)
       }
 
     useEffect(() => {

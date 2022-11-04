@@ -1,0 +1,31 @@
+.wrapper{
+    background-color: var(--white-color);
+}
+.title{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.input-price {
+    display: block;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: 1px solid rgb(228, 229, 240);
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    z-index: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.input-price + .input-price {
+    margin-top: 6px;
+}
+
+.search-btn{
+    margin: 8px auto;
+}
+
+.lable span{
+    font-size: 1.6rem;
+}
