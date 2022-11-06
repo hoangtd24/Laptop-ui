@@ -6,12 +6,13 @@ import Banner from '~/layouts/components/Banner/Banner';
 import HotProducts from '~/layouts/components/HotProducts';
 import Brands from '~/layouts/components/Brands/Brands';
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SuggestProducts from '~/components/SuggestProducts/SuggestProducts';
+import CategoryItem from '~/components/Category/CategoryItem';
+import Category from '~/layouts/components/Category/Category';
 
-
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 function Home() {
     const slideImages = [
         {
@@ -50,36 +51,35 @@ function Home() {
         {
             src: images.banner4,
         },
-        
     ];
 
     const brands = [
         {
             src: images.brand1,
-            name: 'Asus'
+            name: 'Asus',
         },
         {
             src: images.brand2,
-            name: 'Microsoft'
+            name: 'Microsoft',
         },
         {
             src: images.brand3,
-            name: 'Hp'
+            name: 'Hp',
         },
         {
             src: images.brand4,
-            name: 'Lenovo'
+            name: 'Lenovo',
         },
-        
     ];
     return (
         <div className={cx('wrapper')}>
-            <Slider images = {slideImages}/>
-            <Banner images = {BannerImages1}/>
+            <Slider imageSlider={slideImages} />
+            <Banner images={BannerImages1} />
             <div className={cx('content')}>
-                <HotProducts type = 'laptop' bgr={images.backgroundImage} name='Laptop' className={cx('slide-product')}/> 
-                <HotProducts type = 'chu' bgr={images.backgroundImage1} name='Chuột'className={cx('slide-product')}/>
-                <Brands brands={brands}/>
+                <Category />
+                <HotProducts type="laptop" bgr={images.backgroundImage} name="Laptop" className={cx('slide-product')} />
+                <HotProducts type="chu" bgr={images.backgroundImage1} name="Chuột" className={cx('slide-product')} />
+                <Brands brands={brands} />
                 <SuggestProducts />
             </div>
         </div>

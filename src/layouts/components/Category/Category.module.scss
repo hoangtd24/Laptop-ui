@@ -1,0 +1,9 @@
+.category{
+    display: none;
+}
+@media (max-width: 576px){
+    .category{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

@@ -1,4 +1,27 @@
-.slide-image{
+.img-fluid{
     width: 100%;
     height: 566px;
+}
+
+.slide-on-pc{
+    display: block;
+}
+.slide-on-mobile{
+    display: none;
+    margin: 12px 12px 32px 12px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 576px) {
+    .slide-on-pc{
+        display: none;
+    }
+    .slide-on-mobile{
+        display: block;
+    }
+    .img-fluid{
+        width: 100%;
+        height: auto;
+    }
 }

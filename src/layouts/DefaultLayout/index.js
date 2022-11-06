@@ -1,7 +1,7 @@
 import style from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 
-import Header from '~/layouts/components/Header/HeaderPC';
+import Header from '~/layouts/components/Header';
 import Care from '~/layouts/components/Care';
 import SideBar from './SideBar';
 import Footer from '~/layouts/components/Footer/Footer';

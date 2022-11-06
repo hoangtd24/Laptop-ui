@@ -4,3 +4,16 @@
     max-width: 100%;
     margin: auto;
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+
+    & button{
+        font-size: 1.4rem;
+    }
+    & svg{
+        font-size: 1.4rem;
+    }
+}

@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom';
 import styles from './SuggestProducts.module.scss';
 import className from 'classnames/bind';
 import ProductItem from '~/layouts/components/HotProducts/ProductItem';
 import { useEffect, useState } from 'react';
+import { Pagination } from '@mui/material';
 
 const cx = className.bind(styles);
-const pages = [1, 2, 3, 4, 5, 6];
 function SuggestProducts() {
-    const scrollToView = () => {
+    const handleChange = (event, value) => {
+        setCurrentPage(value)
         window.scrollTo({
             top: 1800,
-            behavior: 'smooth',
-        });
-    };
+            behavior: 'smooth'
+        })
+      };
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     useEffect(() => {
@@ -35,46 +35,8 @@ function SuggestProducts() {
                 </div>
             </div>
             <div className={cx('d-flex justify-content-center mt-5')}>
-                <ul className={cx('pagination pagination-lg')}>
-                    {currentPage > 1 && (
-                        <li className={cx('page-item')}>
-                            <p
-                                className={cx('page-link')}
-                                onClick={() => {
-                                    scrollToView();
-                                    setCurrentPage((prev) => prev - 1);
-                                }}
-                            >
-                                Previous
-                            </p>
-                        </li>
-                    )}
-                    {pages.map((page, index) => (
-                        <li className={cx('page-item')} key={index}>
-                            <p
-                                className={cx('page-link', { active: currentPage === index + 1 })}
-                                onClick={() => {
-                                    scrollToView();
-                                    setCurrentPage(page);
-                                }}
-                            >
-                                {page}
-                            </p>
-                        </li>
-                    ))}
-                    {currentPage < 6 && (
-                        <li className={cx('page-item')}>
-                            <p
-                                className={cx('page-link')}
-                                onClick={() => {
-                                    scrollToView();
-                                    setCurrentPage((prev) => prev + 1);
-                                }}
-                            >
-                                Next
-                            </p>
-                        </li>
-                    )}
+                <ul className={cx('pagination')}>
+                    <Pagination count={10} color="primary" size='large'page={currentPage} onChange={handleChange}/>
                 </ul>
             </div>
         </div>

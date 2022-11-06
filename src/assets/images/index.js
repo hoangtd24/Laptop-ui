@@ -12,6 +12,13 @@ const images = {
     slideImage6: require('~/assets/images/image6.webp'),
     slideImage7: require('~/assets/images/image7.webp'),
     slideImage8: require('~/assets/images/image8.webp'),
+    slideMobile1: require('~/assets/images/img-mb-1.webp'),
+    slideMobile2: require('~/assets/images/img-mb-2.webp'),
+    slideMobile3: require('~/assets/images/img-mb-3.webp'),
+    slideMobile4: require('~/assets/images/img-mb-4.webp'),
+    slideMobile5: require('~/assets/images/img-mb-5.webp'),
+    slideMobile6: require('~/assets/images/img-mb-6.webp'),
+    slideMobile7: require('~/assets/images/img-mb-7.webp'),
     banner1: require('~/assets/images/banner1.webp'),
     banner2: require('~/assets/images/banner2.webp'),
     banner3: require('~/assets/images/banner3.webp'),
@@ -22,7 +29,13 @@ const images = {
     brand4: require('~/assets/images/brand4.webp'),
     backgroundImage: require('~/assets/images/bgr.png'),
     backgroundImage1: require('~/assets/images/bgr1.png'),
-    adver: require('~/assets/images/qc.png')
+    adver: require('~/assets/images/qc.png'),
+    category1: require('~/assets/images/category1.webp'),
+    category2: require('~/assets/images/category2.webp'),
+    category3: require('~/assets/images/category3.webp'),
+    category4: require('~/assets/images/category4.webp'),
+    category5: require('~/assets/images/category5.webp'),
+
 }
 
 export default images

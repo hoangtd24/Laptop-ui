@@ -1,0 +1,19 @@
+.category-item{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    align-items: center;
+    padding: 6px;
+
+    & > img{
+        width: 42px;
+    }
+
+    & > span {
+        font-size: 12px;
+        line-height: 1.2;
+        text-align: center;
+        margin-top: 6px;
+    }
+}
+

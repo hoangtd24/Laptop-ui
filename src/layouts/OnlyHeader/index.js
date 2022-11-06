@@ -1,12 +1,12 @@
 import classNames from 'classnames/bind';
 import style from './OnlyHeader.module.scss';
-import Header from '~/layouts/components/Header/HeaderPC';
+import Header from '~/layouts/components/Header';
 import Care from '~/layouts/components/Care';
 import Footer from '~/layouts/components/Footer/Footer';
 import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import HeaderMobile from '../components/Header/HeaderMobile/HeaderMobile';
+import { Category } from '@mui/icons-material';
 
 const cx = classNames.bind(style);
 
@@ -34,7 +34,6 @@ function OnlyHeader({ children }) {
     return (
         <div className={cx('wrapper')}>
             <Care />
-            <HeaderMobile />
             <Header />
             <div className={cx('container')}>
                 <div className={cx('content')}>{children}</div>

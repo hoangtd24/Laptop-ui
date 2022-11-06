@@ -6,7 +6,14 @@
     background-color: var(--primary-color);
 }
 
-.container{
+.care-on-mobile{
+    background-color: var(--primary-color);
+    display: none;
+}
+.logo-mobile{
+    padding: 16px 0 0 16px;
+}
+.care-on-pc{
     width: 1216px;
     height: 100%;
     display: flex;
@@ -17,5 +24,8 @@
 @media (max-width: 576px) {
     .wrapper{
         display: none;
+    }
+    .care-on-mobile{
+        display: block;
     }
 }

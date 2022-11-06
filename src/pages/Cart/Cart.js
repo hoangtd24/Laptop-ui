@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 import Button from '~/components/Button/Button';
 import transferPrice from '~/components/TranferPrice/tranferPrice';
@@ -66,63 +67,77 @@ function Cart() {
                 <div className={cx('row')}>
                     {cartLists.length > 0 ? (
                         <>
-                            <div className={cx('col-8')}>
+                            <div className={cx('col-12 col-md-8')}>
                                 <div className={cx('cart-info')}>
                                     <h1 className={cx('heading')}>Giỏ hàng</h1>
                                     <Button onClick={handleOpenModalDeleteAll}>Xóa tất cả</Button>
                                 </div>
                                 <div className={cx('cart-container')}>
                                     <div className={cx('cart-heading')}>
-                                        <p className={cx('cart-heading-item', 'width')}>Sản phẩm</p>
-                                        <p className={cx('cart-heading-item')}>Đơn giá</p>
-                                        <p className={cx('cart-heading-item')}>Số lượng</p>
-                                        <p className={cx('cart-heading-item')}>Thành tiền</p>
+                                        <div className={cx('cart-wrap')}>
+                                            <p className={cx('cart-heading-item')}>Sản phẩm</p>
+                                        </div>
+                                        <div className={cx('cart-wrap')}>
+                                            <p className={cx('cart-heading-item')}>Đơn giá</p>
+                                            <p className={cx('cart-heading-item')}>Số lượng</p>
+                                            <p className={cx('cart-heading-item')}>Thành tiền</p>
+                                        </div>
                                     </div>
                                     {cartLists.map((product, index) => (
                                         <div className={cx('cart-item')} key={index}>
-                                            <div className={cx('cart-item-info', 'width')}>
+                                            <div className={cx('cart-wrap-info')}>
                                                 <img className={cx('cart-item-img')} src={product.item.image} alt="" />
                                                 <p className={cx('cart-item-name')}>{product.item.title}</p>
-                                            </div>
-                                            <div className={cx('cart-price')}>
-                                                <p className={cx('cart-price-new')}>
-                                                    {transferPrice(product.item.newprice)}
-                                                </p>
-                                                <p className={cx('cart-price-old')}>
-                                                    {transferPrice(product.item.oldprice)}
-                                                </p>
-                                            </div>
-                                            <div className={cx('cart-quantity')}>
-                                                <div className={cx('cart-quantity-action')}>
-                                                    <FontAwesomeIcon
-                                                        icon={faMinus}
-                                                        className={cx('action-icon', {
-                                                            prevent: product.quantity === 1,
-                                                        })}
-                                                        onClick={() => dispatch(decreaseQuantity(index))}
-                                                    />
-                                                    <span className={cx('cart-item-quantity')}>{product.quantity}</span>
-                                                    <FontAwesomeIcon
-                                                        icon={faPlus}
-                                                        className={cx('action-icon')}
-                                                        onClick={() => dispatch(increaseQuantity(index))}
-                                                    />
-                                                </div>
-                                                <button
-                                                    className={cx('remove-item')}
+                                                <span
+                                                    className={cx('delete-icon')}
                                                     onClick={() => handleOpenModalDelete(index)}
                                                 >
-                                                    Xóa
-                                                </button>
+                                                    <DeleteRoundedIcon sx={{ fontSize: '18px' }} />
+                                                </span>
                                             </div>
-                                            <p className={cx('total-price')}>
-                                                {transferPrice(product.item.newprice * product.quantity)}
-                                            </p>
+                                            <div className={cx('cart-wrap-price')}>
+                                                <div className={cx('cart-price')}>
+                                                    <p className={cx('cart-price-new')}>
+                                                        {transferPrice(product.item.newprice)}
+                                                    </p>
+                                                    <p className={cx('cart-price-old')}>
+                                                        {transferPrice(product.item.oldprice)}
+                                                    </p>
+                                                </div>
+                                                <div className={cx('cart-quantity')}>
+                                                    <div className={cx('cart-quantity-action')}>
+                                                        <FontAwesomeIcon
+                                                            icon={faMinus}
+                                                            className={cx('action-icon', {
+                                                                prevent: product.quantity === 1,
+                                                            })}
+                                                            onClick={() => dispatch(decreaseQuantity(index))}
+                                                        />
+                                                        <span className={cx('cart-item-quantity')}>
+                                                            {product.quantity}
+                                                        </span>
+                                                        <FontAwesomeIcon
+                                                            icon={faPlus}
+                                                            className={cx('action-icon')}
+                                                            onClick={() => dispatch(increaseQuantity(index))}
+                                                        />
+                                                    </div>
+                                                    <button
+                                                        className={cx('remove-item')}
+                                                        onClick={() => handleOpenModalDelete(index)}
+                                                    >
+                                                        Xóa
+                                                    </button>
+                                                </div>
+                                                <p className={cx('total-price')}>
+                                                    {transferPrice(product.item.newprice * product.quantity)}
+                                                </p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <div className={cx('col-3 p-4 shadow rounded-4 ms-5 mb-5')} style={{ height: '174px' }}>
+                            <div className={cx('col-12 col-md-3 p-4 shadow rounded-4', 'payment')}>
                                 <p className={cx('fw-bold')}>Thanh Toán</p>
                                 <div className={cx('payment__estimate')}>
                                     <span>Tổng tạm tính</span>

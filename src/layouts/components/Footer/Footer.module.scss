@@ -68,3 +68,34 @@
 .location-address{
     font-size: 1.2rem;
 }
+
+
+.footer-mobile{
+    position: fixed;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    z-index: 10;
+
+    & span{
+      opacity: 1;
+    }
+}
+
+.custom-action-item{
+    width: 20%;
+}
+
+@media (max-width: 576px){
+    .wrapper{
+        display: none;
+    }
+    .footer-mobile{
+        display: flex;
+    }
+}
+

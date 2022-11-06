@@ -1,6 +1,5 @@
 .product{
     position: relative;
-    margin: 0 6px;
     background-color: white;
     padding: 16px;
     display: flex;
@@ -83,6 +82,17 @@
     text-decoration: line-through;
 }
 
-.product-transport{
-
+@media (max-width: 576px){
+    .product{
+        padding: 10px;
+    }
+    .product-img{
+        height: auto;
+    }
+    .product-price-current{
+        font-size: 1.3rem;
+    }
+    .product-price-old{
+        font-size: 1.2rem;
+    }
 }

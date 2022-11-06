@@ -1,6 +1,8 @@
 .wrapper{
     margin: auto;
     transform: translateY(-50%);
+    position: relative;
+    z-index: 10;
 }
 
 .content{
@@ -26,4 +28,10 @@
     color: #333;
     font-weight: 500;
     margin-top: 16px;
+}
+
+@media (max-width: 576px) {
+    .wrapper{
+        display: none;
+    }
 }

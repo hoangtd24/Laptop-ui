@@ -201,8 +201,40 @@
     align-items: center;
 }
 
+
+.header-mobile{
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    border: 2px solid var(--primary-color);
+} 
+
+.search-mobile{
+    padding: 6px;
+    border-radius: 9999px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search-btn-mobile{
+    color: #ccc;
+    padding: 4px;
+}
+
 @media (max-width: 576px) {
     .wrapper{
         display: none;
+    }
+    .header-mobile{
+        display: flex;
+        align-items: center;
     }
 }
