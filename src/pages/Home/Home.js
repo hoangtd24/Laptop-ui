@@ -9,7 +9,7 @@ import Brands from '~/layouts/components/Brands/Brands';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SuggestProducts from '~/components/SuggestProducts/SuggestProducts';
-import CategoryItem from '~/components/Category/CategoryItem';
+import CategoryItem from '~/components/CategoryItem/CategoryItem';
 import Category from '~/layouts/components/Category/Category';
 
 const cx = classNames.bind(styles);

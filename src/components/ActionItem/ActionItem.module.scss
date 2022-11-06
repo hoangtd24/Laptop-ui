@@ -18,13 +18,16 @@
     color: #000;
 }
 .action-title{
-    display: none;
+    display: block;
     color: #82869E;
     font-size: 1.3rem;
     font-weight: 500;
 }
 
 @media (max-width: 576px){
+    .action-title{
+        display: none;
+    }
     .active .action-title{
         display: block;
         color: var(--primary-color);

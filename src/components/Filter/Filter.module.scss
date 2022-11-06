@@ -29,3 +29,55 @@
 .lable span{
     font-size: 1.6rem;
 }
+
+.close-filter{
+    display: none;
+}
+
+@keyframes fadeIn {
+    from{
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px){
+    .wrapper{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 100px;
+        z-index: 2000;
+        background-color: rgb(231, 231, 231);
+        padding: 16px 16px;
+        animation: fadeIn 0.5s linear;
+    }
+
+    .wrapper.block{
+        display: block;
+    }
+
+    .wrapper.hide{
+        display: none;
+    }
+
+    .close-filter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: auto;
+        margin-bottom: 16px;
+        background-color: var(--primary-color);
+    }
+}
+
+

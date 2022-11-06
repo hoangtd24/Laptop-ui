@@ -264,3 +264,17 @@
 .describe img{
     width: 100%;
 }
+
+@media (max-width: 576px){
+    .product__info{
+        flex-direction: column;
+    }
+    .info-product{
+        width: 40%;
+        display: contents;
+    }
+    .product__discount{
+        width: 100%;
+        padding-left: 24px;
+    }
+}

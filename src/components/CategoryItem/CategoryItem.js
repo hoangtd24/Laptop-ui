@@ -1,13 +1,14 @@
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import styles from './Category.module.scss';
 
 const cx = classNames.bind(styles);
-function CategoryItem({src, title }) {
+function CategoryItem({src, title, to, onClick }) {
     return (
-        <div className={cx('category-item')}>
+        <Link className={cx('category-item')} to={to} onClick={onClick}>
             <img src={src} alt="" />
             <span>{title}</span>
-        </div>
+        </Link>
     );
 }
 

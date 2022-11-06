@@ -16,3 +16,9 @@
         font-size: 1.4rem;
     }
 }
+
+@media (max-width: 576px){
+    .pagination{
+        margin: 32px 0 64px 0;
+    }
+}

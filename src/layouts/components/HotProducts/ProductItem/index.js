@@ -8,7 +8,7 @@ const cx = classNames.bind(styles)
 
 function ProductItem({data}){
     return(
-        <Link to= {`@${data._id}`} className={cx('product')}>
+        <Link to= {`/@${data._id}`} className={cx('product')}>
             <img src = {data.image} className={cx('product-img')} alt=""/>
             <div className = {cx('product-lable')}>
                 <p className = {cx('product-title')}>TIẾT KIỆM</p>

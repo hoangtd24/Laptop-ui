@@ -61,7 +61,7 @@ function Detail() {
                     </ol>
                 </nav>
                 <div className={cx('row')}>
-                    <div className={cx('col-9')}>
+                    <div className={cx('col-12 col-md-9')}>
                         {product && (
                             <div className={cx('product__info')}>
                                 <div className={cx('info-product')}>
@@ -169,7 +169,7 @@ function Detail() {
                             </div>
                         )}
                     </div>
-                    <div className={cx('col-3')}>
+                    <div className={cx('col-12 col-md-3')}>
                         <div className={cx('product__policy')}>
                             <div className={cx('policy-transport')}>
                                 <Car />
@@ -204,7 +204,7 @@ function Detail() {
                                     <Shield />
                                     <span>Bảo hành tại nhà.</span>
                                 </div>
-                                <img className={cx('img-fluid mt-5 rounded-4')} src={images.adver} alt="" />
+                                <img className={cx('img-fluid mt-5 rounded-4 d-none d-sm-block')} src={images.adver} alt="" />
                             </div>
                         </div>
                     </div>

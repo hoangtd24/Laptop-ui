@@ -123,7 +123,7 @@ function Footer() {
         {
             icon: <GridViewOutlinedIcon />,
             title: 'Danh mục',
-            to: '/category',
+            to: '/dashboard',
         },
         {
             icon: <LocalMallOutlinedIcon />,

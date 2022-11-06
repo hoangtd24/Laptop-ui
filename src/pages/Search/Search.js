@@ -4,14 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import Filter from '~/components/Filter/Filter';
 import ProductItem from '~/layouts/components/HotProducts/ProductItem';
 import styles from './Search.module.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { filterProduct, pageChange } from '~/features/filter/filterSlice';
 import React from 'react';
+import Button from '~/components/Button/Button';
+import FilterAltOutlinedIcon from '@mui/icons-material/FilterAltOutlined';
 
 const cx = classNames.bind(styles);
 function Search() {
     const { category, type, page, minPrice, maxPrice, sort, productLists } = useSelector((state) => state.filter);
-    console.log(productLists);
+    const [showFilter, setShowFilter] = useState(false)
     const dispatch = useDispatch();
     const handleChange = (event, value) => {
         dispatch(pageChange(value));
@@ -47,12 +49,15 @@ function Search() {
                     </Typography>
                 </Breadcrumbs>
                 <Grid container spacing={2}>
-                    <Hidden smDown>
-                        <Grid item xs={0} md={2}>
-                            <Filter />
+                    <Grid item xs={0} sm={2} md={2}>
+                        <Filter className={cx({"block": showFilter})} showFilter setShowFilter/>
+                    </Grid>
+                    <Hidden smUp>
+                        <Grid item xs={12} sm={0} md={0}>
+                            <Button rightIcon={<FilterAltOutlinedIcon sx={{ fontSize: '18px' }} onClick={() => setShowFilter(true)}/>}>Bộ lọc</Button>
                         </Grid>
                     </Hidden>
-                    <Grid item xs={12} md={10} spacing={0} container>
+                    <Grid item xs={12} sm={10} md={10} spacing={0} container>
                         {productLists.listProducts &&
                             productLists.listProducts.map((item, index) => (
                                 <Grid item xs={4} sm={3} lg={2.4} key={index}>

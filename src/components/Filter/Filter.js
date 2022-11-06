@@ -1,11 +1,12 @@
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Radio, RadioGroup } from '@mui/material';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
 import classNames from 'classnames/bind';
 import Button from '../Button/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './Filter.module.scss';
-import { useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
     categoryChange,
@@ -18,8 +19,9 @@ import {
 
 const cx = classNames.bind(styles);
 
-function Filter() {
-    const { category, type, page, minPrice, maxPrice, filter} = useSelector((state) => state.filter);
+function Filter({ className}) {
+    const [hideFilter, setHideFilter] = useState(false)
+    const { category, type, page, minPrice, maxPrice, filter } = useSelector((state) => state.filter);
     const dispatch = useDispatch();
 
     const handleMinPrice = (e) => {
@@ -49,12 +51,15 @@ function Filter() {
         if (!!maxPrice) {
             data = { ...data, maxPrice };
         }
-        console.log(data);
         dispatch(filterProduct([category, data]));
     }, [minPrice, maxPrice, category, type, filter, page, dispatch]);
 
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper',className,{"hide": hideFilter})}>
+            <span className={cx("close-filter")} onClick={() => {
+                setHideFilter(true)}}>
+                <KeyboardArrowLeftIcon sx={{fontSize: '24px'}}/>
+            </span>
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{ fontSize: '20px' }} />}
