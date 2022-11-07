@@ -19,8 +19,7 @@ import {
 
 const cx = classNames.bind(styles);
 
-function Filter({ className}) {
-    const [hideFilter, setHideFilter] = useState(false)
+function Filter({ className, showFilter, setShowFilter}) {
     const { category, type, page, min, max, filter } = useSelector((state) => state.filter);
     const dispatch = useDispatch();
 
@@ -55,9 +54,9 @@ function Filter({ className}) {
     }, [min, max, category, type, filter, page, dispatch]);
 
     return (
-        <div className={cx('wrapper',className,{"hide": hideFilter})}>
+        <div className={cx('wrapper',{"block" : showFilter})}>
             <span className={cx("close-filter")} onClick={() => {
-                setHideFilter(true)}}>
+                setShowFilter(false)}}>
                 <KeyboardArrowLeftIcon sx={{fontSize: '24px'}}/>
             </span>
             <Accordion>

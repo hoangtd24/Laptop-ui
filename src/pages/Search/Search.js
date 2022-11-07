@@ -50,7 +50,7 @@ function Search() {
                 </Breadcrumbs>
                 <Grid container spacing={2}>
                     <Grid item xs={0} sm={2} md={2}>
-                        <Filter className={cx({"block": showFilter})} showFilter setShowFilter/>
+                        <Filter showFilter={showFilter} setShowFilter={setShowFilter}/>
                     </Grid>
                     <Hidden smUp>
                         <Grid item xs={12} sm={0} md={0}>

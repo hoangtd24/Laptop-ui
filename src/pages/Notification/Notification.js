@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind';
 import styles from './Notification.module.scss';
-import Category from '~/layouts/components/Category/Category';
 
 const cx = classNames.bind(styles);
 function Notification() {
