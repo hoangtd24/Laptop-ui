@@ -10,6 +10,16 @@ export const getLaptop = async (param) => {
     }
 }
 
+export const search = async (param) => {
+    try{
+        const result = await axios.get(`https://api-laptop-shop.herokuapp.com/api/products?search=${param}`)
+        return result.data
+    }
+    catch(error){
+        console.error();
+    }
+}
+
 export const filter = async (param) => {
     try{
         const result = await axios.get(`https://api-laptop-shop.herokuapp.com/api/products/${param[0]}?`,{

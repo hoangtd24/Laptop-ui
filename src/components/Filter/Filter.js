@@ -21,7 +21,7 @@ const cx = classNames.bind(styles);
 
 function Filter({ className}) {
     const [hideFilter, setHideFilter] = useState(false)
-    const { category, type, page, minPrice, maxPrice, filter } = useSelector((state) => state.filter);
+    const { category, type, page, min, max, filter } = useSelector((state) => state.filter);
     const dispatch = useDispatch();
 
     const handleMinPrice = (e) => {
@@ -45,14 +45,14 @@ function Filter({ className}) {
         if (!!filter) {
             data = { ...data, filter };
         }
-        if (!!minPrice) {
-            data = { ...data, minPrice };
+        if (!!min) {
+            data = { ...data, min };
         }
-        if (!!maxPrice) {
-            data = { ...data, maxPrice };
+        if (!!max) {
+            data = { ...data, max };
         }
         dispatch(filterProduct([category, data]));
-    }, [minPrice, maxPrice, category, type, filter, page, dispatch]);
+    }, [min, max, category, type, filter, page, dispatch]);
 
     return (
         <div className={cx('wrapper',className,{"hide": hideFilter})}>
@@ -72,13 +72,13 @@ function Filter({ className}) {
                     <input
                         placeholder="Giá thấp nhất"
                         className={cx('input-price')}
-                        value={minPrice}
+                        value={min}
                         onChange={handleMinPrice}
                     />
                     <input
                         placeholder="Giá cao nhất"
                         className={cx('input-price')}
-                        value={maxPrice}
+                        value={max}
                         onChange={handleMaxPrice}
                     />
                     <Button primary small className={cx('search-btn')}>

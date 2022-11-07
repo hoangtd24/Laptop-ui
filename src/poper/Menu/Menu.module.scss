@@ -35,3 +35,18 @@
 .login-btn{
     width: 92%;
 }
+
+@media (max-width: 576px){
+    .custom-menu-item{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        height: 40px;
+        font-size: 1.4rem;
+        min-width: unset;
+        border-radius: unset;
+        padding: 16px;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+}

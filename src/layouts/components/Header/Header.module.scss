@@ -226,7 +226,12 @@
 
 .search-btn-mobile{
     color: #ccc;
-    padding: 4px;
+    padding: 4px 12px;
+}
+
+.search-input-mobile{
+    width: 100%;
+    padding-left:  16px;
 }
 
 @media (max-width: 576px) {

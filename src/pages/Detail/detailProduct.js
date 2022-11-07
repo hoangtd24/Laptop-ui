@@ -19,32 +19,31 @@ const cx = classNames.bind(styles);
 function Detail() {
     const productId = useParams();
     const [promoActive, setPromoActive] = useState(true);
-    const [product, setProduct] = useState({});
     const dispatch = useDispatch();
-    const {item} = useSelector(state=>state.product)
+    const { item } = useSelector((state) => state.product);
 
     useEffect(() => {
         dispatch(getDataLaptop(productId.title));
-        setProduct(item)
-    }, [dispatch, productId.title,item]);
+        console.log('re-render')
+    }, [dispatch,productId.title]);
     function createMarkup() {
-        return { __html: product.content };
+        return { __html: item.content };
     }
-    
+
     function MyComponent() {
         return (
             <div className={cx('describe-content')}>
                 <div className={cx('describe')}>
                     <h1>Mô tả sản phẩm</h1>
-                    {product && <div className={cx('description')} dangerouslySetInnerHTML={createMarkup()} />}
+                    {item && <div className={cx('description')} dangerouslySetInnerHTML={createMarkup()} />}
                 </div>
                 <ProductSpecifications />
             </div>
         );
     }
     function handleAddItem() {
-        toast.success("Đã thểm sản phẩm vào giỏ hàng")
-        dispatch(addProduct(product))
+        toast.success('Đã thểm sản phẩm vào giỏ hàng');
+        dispatch(addProduct(item));
     }
 
     return (
@@ -62,10 +61,10 @@ function Detail() {
                 </nav>
                 <div className={cx('row')}>
                     <div className={cx('col-12 col-md-9')}>
-                        {product && (
+                        {item && (
                             <div className={cx('product__info')}>
                                 <div className={cx('info-product')}>
-                                    <img className={cx('product-img')} src={product.image} alt="" />
+                                    <img className={cx('product-img')} src={item.image} alt="" />
                                     <div className={cx('product-setting')}>
                                         <p className={cx('product-setting-item')}>- CPU: Intel Core i7-10510U</p>
                                         <p className={cx('product-setting-item')}>- Màn hình: 14" IPS (1920 x 1080)</p>
@@ -82,7 +81,7 @@ function Detail() {
                                     </div>
                                 </div>
                                 <div className={cx('product__discount')}>
-                                    <h1 className={cx('product-name')}>{product.title}</h1>
+                                    <h1 className={cx('product-name')}>{item.title}</h1>
                                     <div className={cx('product-trademark')}>
                                         <div className={cx('trademark')}>
                                             <p className={cx('trademark-title')}>Thương hiệu: </p>
@@ -92,21 +91,21 @@ function Detail() {
                                         </div>
                                         <p className={cx('trademark-store')}>SKU: 220609880</p>
                                     </div>
-                                    <p className={cx('product-quantity')}>Chỉ còn lại {product.quantity} sản phẩm</p>
+                                    <p className={cx('product-quantity')}>Chỉ còn lại {item.quantity} sản phẩm</p>
                                     <div className={cx('product-info')}>
                                         <div className={cx('product-price')}>
                                             {promoActive ? (
                                                 <p className={cx('product-price-current')}>
-                                                    {product.newprice && transferPrice(product.newprice)}
+                                                    {item.newprice && transferPrice(item.newprice)}
                                                 </p>
                                             ) : (
                                                 <p className={cx('product-price-current')}>
-                                                    {product.oldprice && transferPrice(product.oldprice)}
+                                                    {item.oldprice && transferPrice(item.oldprice)}
                                                 </p>
                                             )}
                                             {promoActive && (
                                                 <p className={cx('product-price-old')}>
-                                                    {product.oldprice && transferPrice(product.oldprice)}
+                                                    {item.oldprice && transferPrice(item.oldprice)}
                                                 </p>
                                             )}
                                         </div>
@@ -123,8 +122,8 @@ function Detail() {
                                             <div className={cx('promo-info')}>
                                                 <p className={cx('promo-price')}>
                                                     Giảm{' '}
-                                                    {product.newprice &&
-                                                        transferPrice(product.oldprice - product.newprice)}{' '}
+                                                    {item.newprice &&
+                                                        transferPrice(item.oldprice - item.newprice)}{' '}
                                                     / Chiếc
                                                 </p>
                                                 <p className={cx('promo-condition')}>Khi mua từ 1 Chiếc trở lên</p>
@@ -204,7 +203,11 @@ function Detail() {
                                     <Shield />
                                     <span>Bảo hành tại nhà.</span>
                                 </div>
-                                <img className={cx('img-fluid mt-5 rounded-4 d-none d-sm-block')} src={images.adver} alt="" />
+                                <img
+                                    className={cx('img-fluid mt-5 rounded-4 d-none d-sm-block')}
+                                    src={images.adver}
+                                    alt=""
+                                />
                             </div>
                         </div>
                     </div>

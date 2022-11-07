@@ -9,7 +9,6 @@ import Brands from '~/layouts/components/Brands/Brands';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import SuggestProducts from '~/components/SuggestProducts/SuggestProducts';
-import CategoryItem from '~/components/CategoryItem/CategoryItem';
 import Category from '~/layouts/components/Category/Category';
 
 const cx = classNames.bind(styles);
@@ -77,8 +76,8 @@ function Home() {
             <Banner images={BannerImages1} />
             <div className={cx('content')}>
                 <Category />
-                <HotProducts type="laptop" bgr={images.backgroundImage} name="Laptop" className={cx('slide-product')} />
-                <HotProducts type="chu" bgr={images.backgroundImage1} name="Chuột" className={cx('slide-product')} />
+                <HotProducts bgr={images.backgroundImage} name="Laptop" className={cx('slide-product')} />
+                <HotProducts bgr={images.backgroundImage1} name="Chuột" className={cx('slide-product')} />
                 <Brands brands={brands} />
                 <SuggestProducts />
             </div>

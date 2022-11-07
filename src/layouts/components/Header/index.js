@@ -9,13 +9,13 @@ import { Wrapper as PoperWrapper } from '~/poper';
 import SearchItem from '~/components/SearchItem';
 import ActionItem from '~/components/ActionItem';
 import { Address, Bell, Cart, News, Order, Promote, User } from '~/components/icons';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import CartItem from '~/components/CartItem/CartItem';
 import Button from '~/components/Button/Button';
 import Menu from '~/poper/Menu/Menu';
-import { Link } from 'react-router-dom';
-import transferPrice from '~/components/TranferPrice/tranferPrice';
+import { Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { search } from '~/api/laptopApi';
 
 const cx = classNames.bind(style);
 
@@ -32,7 +32,6 @@ function Header() {
     const data = JSON.parse(localStorage.getItem('loginUser'));
     const { token } = useSelector((state) => state.user);
     const { cartLists } = useSelector((state) => state.cart);
-
     const isSignIn = data ? data.token : token;
 
     useEffect(() => {
@@ -40,9 +39,12 @@ function Header() {
             setSearchResult([]);
             return;
         }
-        fetch(`https://api-laptop-shop.herokuapp.com/api/products?search=${searchValue}`)
-            .then((res) => res.json())
-            .then((res) => setSearchResult(res.listProducts));
+        const searchProduct = async () => {
+            const result = await search(searchValue)
+            setSearchResult(result.listProducts)
+        }
+
+        searchProduct()
     }, [searchValue]);
     const userMenu = [
         {
@@ -236,4 +238,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default memo(Header);

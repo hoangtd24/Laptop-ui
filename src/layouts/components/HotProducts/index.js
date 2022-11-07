@@ -14,12 +14,14 @@ import 'swiper/css/navigation';
 // Import Swiper styles
 
 import ProductItem from './ProductItem';
+import { useDispatch } from 'react-redux';
+import { categoryChange } from '~/features/filter/filterSlice';
 
 const cx = classNames.bind(styles);
 
-function HotProducts({ type, bgr, name, className }) {
-    const apiProducts = `https://api-laptop-shop.herokuapp.com/api/products?search=${type}`;
-
+function HotProducts({ bgr, name, className }) {
+    const apiProducts = `https://api-laptop-shop.herokuapp.com/api/products?search=${name}`;
+    const dispatch = useDispatch()
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     useEffect(() => {
@@ -39,7 +41,7 @@ function HotProducts({ type, bgr, name, className }) {
             >
                 <div className={cx('header')}>
                     <h1 className={cx('title')}>{name}</h1>
-                    <Link to="/search" className={cx('see-all')}>
+                    <Link to="/search" className={cx('see-all')} onClick={() => dispatch(categoryChange(name))}>
                         Xem tất cả
                         <FontAwesomeIcon icon={faAngleRight} className={cx('arrow-right')} />
                     </Link>

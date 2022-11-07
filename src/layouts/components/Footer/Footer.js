@@ -138,7 +138,7 @@ function Footer() {
         {
             icon: <PersonOutlineOutlinedIcon />,
             title: 'Tài khoản',
-            to: '/user',
+            to: '/account',
         },
     ];
     const [value, setValue] = useState(0);
