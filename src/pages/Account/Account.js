@@ -35,6 +35,11 @@ const userMenu = [
 function Account() {
     return (
         <div className={cx('wrapper')}>
+            <div className={cx("account")}>
+                <button className={cx("login-btn")}>
+                    <a href='/login'>Đăng Nhập</a>
+                </button>
+            </div>
             {userMenu.map((item,index) => <MenuItem key={index} data={item}/>)}
             <CareItem LeftIcon={<System />} title="Hệ thống Showroom" to="/contact" />
             <CareItem LeftIcon={<HeadPhone />} title="Tư vấn khách hàng: " contact="1800 6867" />

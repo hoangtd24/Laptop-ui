@@ -57,7 +57,7 @@ function Cart() {
                 <nav aria-label="breadcrumb" className={cx('breadcrumb-wrap')}>
                     <ol className={cx('breadcrumb')}>
                         <li className={cx('breadcrumb-item')}>
-                            <a href="/">Trang chủ</a>
+                            <a href="/" className={cx("d-block")}>Trang chủ</a>
                         </li>
                         <li className={cx('breadcrumb-item')} aria-current="page">
                             Giỏ hàng

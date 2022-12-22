@@ -1,43 +1,44 @@
 @import url('normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&display=swap');
 
-:root{
+:root {
     --primary-color: #029066;
-    --white:white;
+    --white: white;
     --black: black;
     --text-color: #ccc;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+html {
     font-size: 62.5%;
 }
 
-body{
+body {
     font-size: 1.6rem;
-    line-height: 2rem;
-    font-family: 'Roboto',sans-serif;
+    line-height: 1.5;
+    font-family: 'Jost', sans-serif;
     text-rendering: optimizeSpeed;
 }
 
-button, input{
+button,
+input {
     border: none;
     outline: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-a[href]{
+a[href] {
     text-decoration: none;
 }
 
 //
 
-.breadcrumb{
+.breadcrumb {
     margin-bottom: 24px;
 }
 //custom arrow
@@ -52,7 +53,7 @@ a[href]{
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     color: transparent;
     top: 50%;
     margin-top: -10px;
@@ -60,9 +61,10 @@ a[href]{
     border: none;
     outline: none;
     transition: all 0.3s ease;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         outline: none;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         color: transparent;
     }
 }
@@ -71,7 +73,7 @@ a[href]{
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     left: -25px;
-    [dir="rtl"] & {
+    [dir='rtl'] & {
         left: auto;
         right: -25px;
     }
@@ -81,55 +83,54 @@ a[href]{
     right: -25px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    [dir="rtl"] & {
+    [dir='rtl'] & {
         left: -25px;
         right: auto;
     }
 }
 
-
 //grid system'
 
-.grid{
+.grid {
     width: 1200px;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.grid__row{
+.grid__row {
     display: flex;
     flex-wrap: wrap;
 }
 
-.grid__column-2{
+.grid__column-2 {
     padding-left: 5px;
     padding-right: 5px;
     width: 16.66667%;
 }
 
-.grid__column-2-4{
+.grid__column-2-4 {
     padding-left: 5px;
     padding-right: 5px;
     width: 20%;
 }
 
-.grid__column-3{
+.grid__column-3 {
     padding-left: 5px;
     padding-right: 5px;
     width: 25%;
 }
-.grid__column-6{
+.grid__column-6 {
     padding-left: 5px;
     padding-right: 5px;
     width: 50%;
 }
 
-.grid__column-9{
+.grid__column-9 {
     padding-left: 5px;
     padding-right: 5px;
     width: 75%;
 }
-.grid__column-10{
+.grid__column-10 {
     padding-left: 5px;
     padding-right: 5px;
     width: 83.33333%;
@@ -151,12 +152,12 @@ html *::-webkit-scrollbar {
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 
 html *::-webkit-scrollbar-track {
@@ -171,11 +172,11 @@ html *::-webkit-scrollbar-track {
 
 //custom swipper pagination
 
-
-@media (min-width: 1024px){
-    .swiper-horizontal>.swiper-pagination-bullets,
+@media (min-width: 1024px) {
+    .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
-    .swiper-pagination-custom, .swiper-pagination-fraction{
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
         bottom: 100px;
         left: 0;
         width: 100%;
